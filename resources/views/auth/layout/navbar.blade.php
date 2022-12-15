@@ -15,7 +15,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </span>
             </button>
-            <div class="collapse navbar-collapse" id="navigation">
+            {{-- <div class="collapse navbar-collapse" id="navigation">
               <ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
                 <li class="nav-item">
                   <a class="nav-link me-2" href="{{ route('register') }}">
@@ -30,7 +30,7 @@
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> --}}
           </div>
         </nav>
         <!-- End Navbar -->

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ViewsController extends Controller
 {
-    public function index()
-    {
-        return view('dashboard.views.index');
-    }
+    // public function index()
+    // {
+    //     return view('dashboard.views.index');
+    // }
 }

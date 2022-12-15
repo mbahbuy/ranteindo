@@ -11,14 +11,11 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',
-            'username' => 'admin',
             'email' => 'Admin@ranteindo.com',
             'password' => bcrypt('admin12345'),
             'email_verified_at' => now(),
             'created_at' => now(),
             'updated_at' => now(),
-            'is_admin' => true,
-            'is_editor' => true
         ]);
     }
 }

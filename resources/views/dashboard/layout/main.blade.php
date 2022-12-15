@@ -15,6 +15,7 @@
   <link href="{{ asset('css') }}/nucleo-icons.css" rel="stylesheet" />
   <link href="{{ asset('css') }}/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="{{ asset('css') }}/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
@@ -27,6 +28,7 @@
 
     @yield('dashboard')
 
+    @include('dashboard.layout.settings')
 
   <!--   Core JS Files   -->
   <script src="{{ asset('js') }}/popper.min.js"></script>

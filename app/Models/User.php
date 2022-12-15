@@ -37,14 +37,4 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
-    public function post()
-    {
-        return $this->hasMany('App\Models\Posts', 'user_id', 'id');
-    }
-
-    public function getRouteKeyName()
-    {
-        return 'username';
-    }
 }
