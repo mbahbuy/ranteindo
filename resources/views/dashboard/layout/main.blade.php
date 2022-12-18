@@ -1,28 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img') }}/apple-icon.png" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/img') }}/favicon.png" />
+    <title>Soft UI Dashboard Tailwind</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/main') }}/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ asset('assets/main') }}/favicon.png">
-  <title>
-    Soft UI Dashboard by Creative Tim
-  </title>
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-  <!-- Nucleo Icons -->
-  <link href="{{ asset('css') }}/nucleo-icons.css" rel="stylesheet" />
-  <link href="{{ asset('css') }}/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="{{ asset('css') }}/nucleo-svg.css" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link id="pagestyle" href="{{ asset('css') }}/soft-ui-dashboard.css?v=1.0.6" rel="stylesheet" />
-</head>
+    <!-- Additional CSS Files -->
+    <link href="{{ asset('css') }}/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css') }}/fontawesome.css">
+    <link rel="stylesheet" href="{{ asset('css') }}/animated.css">
+    <link rel="stylesheet" href="{{ asset('css') }}/owl.css">
+    <link rel="stylesheet" href="{{ asset('css') }}/templatemo-onix-digital.css">
+    <style>
+      .main-banner:after {
+        background-image: url(./assets/img/baner-dec-left.png);
+      }
+      .main-banner:before {
+        background-image: url(./assets/img/banner-right-image.png);
+      }
+      .our-portfolio .item .hover-effect {
+        background-image: url(./assets/img/hover-bg.png);
+      }
+      .pricing-tables .first-item {
+        background-image: url(./assets/img/first-plan-bg.png);
+      }
+      .pricing-tables .second-item {
+        background-image: url(./assets/img/second-plan-bg.png);
+      }
+      .pricing-tables .third-item {
+        background-image: url(./assets/img/third-plan-bg.png);
+      }
+      .subscribe .inner-content {
+        background-image: url(./assets/img/subscribe-bg.png);
+      }
+      .subscribe .inner-content:after {
+        background-image: url(./assets/img/subscribe-dec.png);
+      }
+      form#contact {
+        background-image: url(./assets/img/contact-form-bg.png);
+      }
+    </style>
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js') }}/jquery.min.js"></script>
+    <script src="{{ asset('js') }}/bootstrap.bundle.min.js"></script>
 
-<body class="g-sidenav-show bg-gray-100">
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Nucleo Icons -->
+    <link href="{{ asset('css') }}/nucleo-icons.css" rel="stylesheet" />
+    <link href="{{ asset('css') }}/nucleo-svg.css" rel="stylesheet" />
+    <!-- Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <!-- Main Styling -->
+    <link href="{{ asset('css') }}/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
+
+  </head>
+
+  <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
 
     @include('dashboard.layout.sidebar')
 
@@ -30,24 +70,18 @@
 
     @include('dashboard.layout.settings')
 
-  <!--   Core JS Files   -->
-  <script src="{{ asset('js') }}/popper.min.js"></script>
-  <script src="{{ asset('js') }}/bootstrap.min.js"></script>
-  <script src="{{ asset('js') }}/perfect-scrollbar.min.js"></script>
-  <script src="{{ asset('js') }}/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
-  <!-- Github buttons -->
+  </body>
+  <!-- Scripts custom -->
+  <script src="{{ asset('js') }}/owl-carousel.js"></script>
+  <script src="{{ asset('js') }}/animation.js"></script>
+  <script src="{{ asset('js') }}/imagesloaded.js"></script>
+  <script src="{{ asset('js') }}/custom.js"></script>
+  <!-- plugin for charts  -->
+  <script src="{{ asset('js') }}/chartjs.min.js" async></script>
+  <!-- plugin for scrollbar  -->
+  <script src="{{ asset('js') }}/perfect-scrollbar.min.js" async></script>
+  <!-- github button -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ asset('js') }}/soft-ui-dashboard.min.js?v=1.0.6"></script>
-</body>
-
+  <!-- main script file  -->
+  <script src="{{ asset('js') }}/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
 </html>

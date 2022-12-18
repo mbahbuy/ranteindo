@@ -6,7 +6,7 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="{{ route('home') }}" class="logo">
-              <img src="{{ asset('assets') }}/main/ranteindo.png">
+              <img src="{{ asset('assets') }}/img/ranteindo.png">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->

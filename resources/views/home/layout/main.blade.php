@@ -21,31 +21,31 @@
     <link rel="stylesheet" href="{{ asset('css') }}/templatemo-onix-digital.css">
     <style>
       .main-banner:after {
-        background-image: url(./assets/main/baner-dec-left.png);
+        background-image: url(./assets/img/baner-dec-left.png);
       }
       .main-banner:before {
-        background-image: url(./assets/main/banner-right-image.png);
+        background-image: url(./assets/img/banner-right-image.png);
       }
       .our-portfolio .item .hover-effect {
-        background-image: url(./assets/main/hover-bg.png);
+        background-image: url(./assets/img/hover-bg.png);
       }
       .pricing-tables .first-item {
-        background-image: url(./assets/main/first-plan-bg.png);
+        background-image: url(./assets/img/first-plan-bg.png);
       }
       .pricing-tables .second-item {
-        background-image: url(./assets/main/second-plan-bg.png);
+        background-image: url(./assets/img/second-plan-bg.png);
       }
       .pricing-tables .third-item {
-        background-image: url(./assets/main/third-plan-bg.png);
+        background-image: url(./assets/img/third-plan-bg.png);
       }
       .subscribe .inner-content {
-        background-image: url(./assets/main/subscribe-bg.png);
+        background-image: url(./assets/img/subscribe-bg.png);
       }
       .subscribe .inner-content:after {
-        background-image: url(./assets/main/subscribe-dec.png);
+        background-image: url(./assets/img/subscribe-dec.png);
       }
       form#contact {
-        background-image: url(./assets/main/contact-form-bg.png);
+        background-image: url(./assets/img/contact-form-bg.png);
       }
     </style>
     

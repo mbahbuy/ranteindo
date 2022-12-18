@@ -4,9 +4,8 @@
         <div class="col-lg-3">
           <div class="about footer-item">
             <div class="logo">
-              <a href="#"><img src="{{ asset('assets') }}/main/logo.png" alt="Onix Digital TemplateMo"></a>
+              <a href="#"><img src="{{ asset('assets') }}/img/ranteindo.png" alt="Ranteindo"></a>
             </div>
-            <a href="#">info@company.com</a>
             <ul>
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -28,7 +27,7 @@
         </div>
         <div class="col-lg-3">
           <div class="community footer-item">
-            <h4>Community</h4>
+            <h4>Portfolio</h4>
             <ul>
               <li><a href="#">Digital Marketing</a></li>
               <li><a href="#">Business Ideas</a></li>
@@ -49,11 +48,7 @@
         </div>
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2021 Onix Digital Co., Ltd. All Rights Reserved. 
-            <br>
-            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a><br>
-            Distributed by <a href="https://themewagon.com">Themewagon</a>
-          </p>
+            <p>Copyright © 2021 Onix Digital Co., Ltd. All Rights Reserved.</p>
           </div>
         </div>
 
