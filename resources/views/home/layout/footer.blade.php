@@ -40,9 +40,10 @@
           <div class="subscribe-newsletters footer-item">
             <h4>Subscribe Newsletters</h4>
             <p>Get our latest news and ideas to your inbox</p>
-            <form action="#" method="get">
+            <form action="{{ route('subscribe') }}" method="post">
+              @csrf
               <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-              <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
+              <button type="submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
             </form>
           </div>
         </div>
