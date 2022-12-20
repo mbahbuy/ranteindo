@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\{ContactMail, ContactSubMail, SubscriberMail};
+use App\Mail\{ContactMail, SubscriberMail};
 
 class Contact extends Model
 {
@@ -14,13 +14,13 @@ class Contact extends Model
     public static function boot() {
         parent::boot();
         static::created(function ($item) {
+            // $adminEmail = 'customer@ranteindo.com';
+            $adminEmail = 'mbahbagonku@gmail.com';
             if($item->parent_id == 1)
             {
-                $adminEmail = 'mbahbagonk@gmail.com';
                 Mail::to($adminEmail)->send(new ContactMail($item));
-                Mail::to($item->email)->send(new ContactSubMail($item));
             } else {
-                Mail::to($item->email)->send(new SubscriberMail($item));
+                Mail::to($adminEmail)->send(new SubscriberMail($item));
             }
         });
     }

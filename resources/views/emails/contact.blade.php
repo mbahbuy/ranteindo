@@ -1,10 +1,9 @@
-<h2>Hey, It's me {{ $data->name }}</h2> 
+<h2>Halo</h2>
+<p>Perkenalkan nama saya <strong>{{ $data->name }}</strong>,</p>
+<p>Ingin menanyakan perihal : <strong>{{ $data->subject }}</strong></p>
 <br>
+<p>{{ $data->message }}</p>
+<br>
+<p>Mohon info lebih lanjut ke email : <strong><a href="mailto:{{ $data->email }}" target="_blank" rel="noopener noreferrer">{{ $data->email }}</a></strong></p>
 
-<strong>User details: </strong><br>
-<strong>Name: </strong>{{ $data->name }} <br>
-<strong>Email: </strong>{{ $data->email }} <br>
-<strong>Subject: </strong>{{ $data->subject }} <br>
-<strong>Message: </strong>{{ $data->message }} <br><br>
-
-Thank you
+<strong>Terima Kasih</strong>

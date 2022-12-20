@@ -520,7 +520,7 @@
 </div>
 
 <div class="footer-dec">
-  <img src="{{ asset('assets') }}/img/footer-dec.png" alt="">
+  <img src="{{ asset('assets') }}/img/footer-dec.png" class="h-100 w-100 object-cover">
 </div>
 
 @endsection

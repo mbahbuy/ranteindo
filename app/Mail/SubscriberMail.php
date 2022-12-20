@@ -19,6 +19,6 @@ class SubscriberMail extends Mailable
 
     public function build()
     {
-        return $this->subject(' Thanks ')->view('emails.subscriber');
+        return $this->subject('Subscriber Newslatter')->view('emails.subscriber');
     }
 }

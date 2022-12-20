@@ -55,7 +55,7 @@
 
   </head>
 
-<body>
+<body class="overflow-x-hidden">
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
