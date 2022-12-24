@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img') }}/apple-icon.png" />
     <link rel="icon" type="image/png" href="{{ asset('assets/img') }}/favicon.png" />
-    <title>Soft UI Dashboard Tailwind</title>
+    <title>{{ $title }}</title>
 
-    @if (Request::is('dashboard*'))        
+    @if (Request::is('dashboard'))        
       <!-- Additional CSS Files -->
       <link href="{{ asset('css') }}/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('css') }}/fontawesome.css">
@@ -67,17 +67,152 @@
 
     @include('dashboard.layout.sidebar')
 
-    @yield('dashboard')
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+      <!-- Navbar -->
+      <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all shadow-none duration-250 ease-soft-in rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="true">
+        <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
+          <nav>
+            <!-- breadcrumb -->
+            <h4 class="mb-0 font-bold capitalize">{{ Request::segment(count(request()->segments())) }}</h4>
+          </nav>
+
+          @if (Request::is('dashboard'))
+          <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
+            <div class="flex items-center md:ml-auto md:pr-4">
+              <h5 class="mb-0 font-bold capitalize">Click bagian yang mau di edit</h5>
+            </div>
+          </div>
+          @endif
+
+          <div class="flex items-center justify-end mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
+            <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
+              <li class="flex items-center px-4">
+                <a class="p-0 transition-all text-sm ease-nav-brand text-slate-500">
+                  <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
+                </a>
+              </li>
+              <li class="flex items-center pl-4 xl:hidden">
+                <a class="block p-0 transition-all ease-nav-brand text-sm text-slate-500" sidenav-trigger>
+                  <div class="w-4.5 overflow-hidden">
+                    <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-slate-500 transition-all"></i>
+                    <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-slate-500 transition-all"></i>
+                    <i class="ease-soft relative block h-0.5 rounded-sm bg-slate-500 transition-all"></i>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- end Navbar -->  
+      
+      @yield('dashboard')
+
+    </main>
 
     @include('dashboard.layout.settings')
 
   </body>
 
-  @if (Request::is('dashboard*'))      
+  @if (Request::is('dashboard'))      
     <!-- Scripts custom -->
     <script src="{{ asset('js') }}/owl-carousel.js"></script>
     <script src="{{ asset('js') }}/animation.js"></script>
     <script src="{{ asset('js') }}/imagesloaded.js"></script>
+    <script>
+      (function ($) {
+        $('.owl-banner').owlCarousel({
+          items:1,
+          loop:true,
+          dots: true,
+          nav: false,
+          autoplay: true,
+          margin:0,
+            responsive:{
+              0:{
+                items:1
+              },
+              600:{
+                items:1
+              },
+              1000:{
+                items:1
+              },
+              1600:{
+                items:1
+              }
+            }
+        })
+
+        $('.owl-services').owlCarousel({
+            items:4,
+            loop:true,
+            dots: true,
+            nav: false,
+            autoplay: true,
+            margin:5,
+              responsive:{
+                  0:{
+                      items:1
+                  },
+                  600:{
+                      items:2
+                  },
+                  1000:{
+                      items:3
+                  },
+                  1600:{
+                      items:4
+                  }
+              }
+        })
+
+        $('.owl-portfolio').owlCarousel({
+            items:4,
+            loop:true,
+            dots: true,
+            nav: true,
+            autoplay: true,
+            margin:30,
+              responsive:{
+                  0:{
+                      items:1
+                  },
+                  700:{
+                      items:2
+                  },
+                  1000:{
+                      items:3
+                  },
+                  1600:{
+                      items:4
+                  }
+              }
+        })
+
+        $('#logo').click(function() {
+          location.href = "{{ route('views.logo') }}";
+        });
+        $('#top').click(function(){
+          location.href = "{{ route('views.top') }}";
+        });
+        $('#services').click(function(){
+          location.href = "{{ route('views.services') }}";
+        });
+        $('#about').click(function(){
+          location.href = "{{ route('views.about') }}";
+        });
+        $('#portfolio').click(function(){
+          location.href = "{{ route('views.project') }}";
+        });
+        $('#contact').click(function(){
+          location.href = "{{ route('views.contact') }}";
+        });
+        $('#footer').click(function(){
+          location.href = "{{ route('views.footer') }}";
+        });
+      })(window.jQuery);
+    </script>
   @endif
   
   <!-- plugin for charts  -->
@@ -87,5 +222,64 @@
   <!-- github button -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- main script file  -->
-  <script src="{{ asset('js') }}/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
+  {{-- <script src="{{ asset('js') }}/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script> --}}
+  <script>
+
+    var sidenav_target = "{{ Request::path() }}";
+
+    loadStylesheet("{{ asset('css') }}/perfect-scrollbar.css");
+    loadJS("{{ asset('js') }}/perfect-scrollbar.js", true);
+
+    if (document.querySelector("nav [navbar-trigger]")) {
+      loadJS("{{ asset('js') }}/navbar-collapse.js", true);
+    }
+
+    if (document.querySelector("[data-target='tooltip']")) {
+      loadJS("{{ asset('js') }}/tooltips.js", true);
+      loadStylesheet("{{ asset('css') }}/tooltips.css");
+    }
+
+    if (document.querySelector("[nav-pills]")) {
+      loadJS("{{ asset('js') }}/nav-pills.js", true);
+    }
+
+    if (document.querySelector("[dropdown-trigger]")) {
+      loadJS("{{ asset('js') }}/dropdown.js", true);
+
+    }
+
+    if (document.querySelector("[fixed-plugin]")) {
+      loadJS("{{ asset('js') }}/fixed-plugin.js", true);
+    }
+
+    if (document.querySelector("[navbar-main]")) {
+      loadJS("{{ asset('js') }}/sidenav-burger.js", true);
+      loadJS("{{ asset('js') }}/navbar-sticky.js", true);
+    }
+
+    if (document.querySelector("canvas")) {
+      loadJS("{{ asset('js') }}/chart-1.js", true);
+      loadJS("{{ asset('js') }}/chart-2.js", true);
+    }
+
+    function loadJS(FILE_URL, async) {
+      let dynamicScript = document.createElement("script");
+
+      dynamicScript.setAttribute("src", FILE_URL);
+      dynamicScript.setAttribute("type", "text/javascript");
+      dynamicScript.setAttribute("async", async);
+
+      document.head.appendChild(dynamicScript);
+    }
+
+    function loadStylesheet(FILE_URL) {
+      let dynamicStylesheet = document.createElement("link");
+
+      dynamicStylesheet.setAttribute("href", FILE_URL);
+      dynamicStylesheet.setAttribute("type", "text/css");
+      dynamicStylesheet.setAttribute("rel", "stylesheet");
+
+      document.head.appendChild(dynamicStylesheet);
+    }
+  </script>
 </html>

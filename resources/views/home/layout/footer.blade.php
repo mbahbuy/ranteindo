@@ -39,7 +39,7 @@
         <div class="col-lg-3">
           <div class="subscribe-newsletters footer-item">
             <h4>Subscribe Newsletters</h4>
-            <p>Get our latest news and ideas to your inbox</p>
+            <p>Dapatkan info terbaru kami pada inbox emailmu</p>
             <form action="{{ route('subscribe') }}" method="post">
               @csrf
               <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
@@ -49,10 +49,9 @@
         </div>
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2021 Onix Digital Co., Ltd. All Rights Reserved.</p>
+            <p>Copyright © 2021 PT. Ranteindo Teknik Mandiri</p>
           </div>
         </div>
-
       </div>
     </div>
   </footer>

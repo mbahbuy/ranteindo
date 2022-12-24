@@ -6,13 +6,7 @@
   <div fixed-plugin-card class="z-sticky shadow-soft-3xl w-90 ease-soft -right-90 fixed top-0 left-auto flex h-full min-w-0 flex-col break-words rounded-none border-0 bg-white bg-clip-border px-2.5 duration-200">
     <div class="px-6 pt-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
       <div class="float-left">
-        <form action="/logout" method="POST">
-          @csrf
-          <button type="submit" class="inline-block w-full px-4 py-3 mb-2 ml-2 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg cursor-pointer xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-purple-700 xl-max:to-pink-500 xl-max:text-white xl-max:border-0 hover:scale-102 hover:shadow-soft-xs active:opacity-85 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 border-fuchsia-500 bg-none text-fuchsia-500 hover:border-fuchsia-500">
-            <span>Logout</span>
-            <i class="fa fa-right-from-bracket"></i>
-          </button>
-        </form>
+        <h6 class="mb-0">Change Password</h6>
       </div>
       <div class="float-right mt-6">
         <button fixed-plugin-close-button class="inline-block p-0 mb-4 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 active:opacity-85 text-slate-700">
@@ -54,7 +48,51 @@
       <div class="min-h-6 mb-0.5 hidden pl-0">
         <input navbarFixed class="rounded-10 duration-250 ease-soft-in-out after:rounded-circle after:shadow-soft-2xl after:duration-250 checked:after:translate-x-5.25 h-5 relative float-left mt-1 ml-auto w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-slate-800/95 checked:bg-slate-800/95 checked:bg-none checked:bg-right" type="checkbox" />
       </div>
+
+      <div class="flex-auto p-6">
+        <form role="form" method="POST" action="{{ route('changepassword') }}">
+          @csrf
+          <label class="mb-2 ml-1 font-bold text-xs text-slate-700" for="old_password">Old Password</label>
+          <div class="mb-4">
+            <input type="password" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Old Password"  name="old_password" id="old_password"/>
+            @error('old_password')
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                    <strong class="font-medium">{{ $message }}</strong>
+                </span>
+            @enderror
+          </div>
+          <label class="mb-2 ml-1 font-bold text-xs text-slate-700" for="new_password">New Password</label>
+          <div class="mb-4">
+            <input type="password" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="New Password"  name="new_password" id="new_password"/>
+            @error('new_password')
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                    <strong class="font-medium">{{ $message }}</strong>
+                </span>
+            @enderror
+          </div>
+          <label class="mb-2 ml-1 font-bold text-xs text-slate-700" for="password_confirmation">Confirm Password</label>
+          <div class="mb-4">
+            <input type="password" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Password Confirmation"  name="password_confirmation" id="password_confirmation"/>
+            @error('password_confirmation')
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                    <strong class="font-medium">{{ $message }}</strong>
+                </span>
+            @enderror
+          </div>
+          <div class="text-center">
+            <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">Change password</button>
+          </div>
+        </form>
+      </div>
+
       <hr class="h-px bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent sm:my-6" />
+      <form action="/logout" method="POST">
+        @csrf
+        <button type="submit" class="inline-block w-full px-4 py-3 mb-2 ml-2 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg cursor-pointer xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-purple-700 xl-max:to-pink-500 xl-max:text-white xl-max:border-0 hover:scale-102 hover:shadow-soft-xs active:opacity-85 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 border-fuchsia-500 bg-none text-fuchsia-500 hover:border-fuchsia-500">
+          <span>Logout</span>
+          <i class="fa fa-right-from-bracket"></i>
+        </button>
+      </form>
     </div>
   </div>
 </div>
