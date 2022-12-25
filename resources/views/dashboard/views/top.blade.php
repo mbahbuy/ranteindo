@@ -43,6 +43,20 @@
             </div>
             <div class="flex-auto p-4">
                 <div class="flex flex-wrap -mx-3">
+                    <div class="w-full max-w-full px-3 mb-6 md:w-6/12 md:flex-none xl:mb-0 xl:w-3/12">
+                        <div class="relative flex flex-col min-w-0 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
+                            <div class="flex-auto px-1 pt-6">
+                                <p class="relative z-10 mb-2 leading-normal text-transparent bg-gradient-to-tl from-gray-900 to-slate-800 text-sm bg-clip-text">Project #1</p>
+                                <a href="javascript:;">
+                                    <h5>Scandinavian</h5>
+                                </a>
+                                <p class="mb-6 leading-normal text-sm">Music is something that every person has his or her own specific opinion about.</p>
+                                <div class="flex items-center justify-between">
+                                    <button type="button" onclick="confirm('Anda berkenan menghapus sambutan ini?')" class="inline-block px-8 py-2 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs tracking-tight-soft border-fuchsia-500 text-fuchsia-500 hover:border-fuchsia-500 hover:bg-transparent hover:text-fuchsia-500 hover:opacity-75 hover:shadow-none active:bg-fuchsia-500 active:text-white active:hover:bg-transparent active:hover:text-fuchsia-500">Hapus</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     {{-- <div class="w-full max-w-full px-3 mb-6 md:w-6/12 md:flex-none xl:mb-0 xl:w-3/12">
                         <div class="relative flex flex-col min-w-0 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
                             <div class="relative">
@@ -100,20 +114,53 @@
                             </div>
                         </div>
                     </div> --}}
-                    <div class="w-full max-w-full px-3 mb-6 md:w-6/12 md:flex-none xl:mb-0 xl:w-3/12">
-                        <div class="relative flex flex-col h-full min-w-0 break-words bg-transparent border border-solid shadow-none rounded-2xl border-slate-100 bg-clip-border">
+                </div>
+            </div>
+            <div class="p-4 pb-0 mb-0 bg-white item-center rounded-t-2xl">
+                <p class="leading-normal text-sm justify-center text-center">Form penambahan sambutan</p>
+            </div>
+            <div class="flex-auto p-4">
+                <div class="flex justify-center mx-3">
+                    <div class="w-full max-w-full justify-center px-3 mb-6 md:w-6/12 md:flex-none xl:mb-0 xl:w-6/12">
+                        <div class="relative justify-center flex flex-col h-full min-w-0 break-words bg-transparent border border-solid shadow-none rounded-2xl border-slate-100 bg-clip-border">
                             <form role="form" method="POST" action="{{ route('views.top.text') }}">
                                 @csrf
-                                <div class="mb-2">
-                                    <input action="/file-upload" dropzone="" type="text" placeholder="Browse file..." class="dark:bg-grey-950 mb-4 focus:shadow-[0_0_0_2px_#e9aede] dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-grey-300 bg-white bg-clip-padding px-3 py-2 font-normal text-grey-700 outline-none transition-all placeholder:text-grey-500 focus:border-[#e293d3] focus:outline-none dz-clickable">
-                                    @error('email')
-                                        <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
-                                            <strong class="font-medium">{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                <div class="flex-auto px-1 pt-6">
+                                    <div class="mb-6">
+                                        <input  type="text" placeholder="Title ..." name="title" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
+                                        @error('title')
+                                            <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                                                <strong class="font-medium">{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-6">
+                                        <textarea name="body" rows="5" placeholder="Keterangan ..." class="focus:shadow-soft-primary-outline min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none"></textarea>
+                                        @error('body')
+                                            <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                                                <strong class="font-medium">{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-6">
+                                        <label class="focus:shadow-soft-primary-outline min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">Target menu
+                                            <select name="href" class="focus:shadow-soft-primary-outline min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+                                                <option value="services">Services</option>
+                                                <option value="about">About</option>
+                                                <option value="portfolio">Portfolio</option>
+                                                <option value="video">Videos</option>
+                                                <option value="conact">Contact</option>
+                                            </select>
+                                        </label>
+                                        @error('href')
+                                            <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                                                <strong class="font-medium">{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="text-center">
-                                  <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">Sign in</button>
+                                  <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">Tambahkan</button>
                                 </div>
                             </form>
                         </div>

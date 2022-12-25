@@ -8,14 +8,14 @@
       <div class="float-left">
         <h6 class="mb-0">Change Password</h6>
       </div>
-      <div class="float-right mt-6">
-        <button fixed-plugin-close-button class="inline-block p-0 mb-4 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 active:opacity-85 text-slate-700">
+      <div class="float-right">
+        <button fixed-plugin-close-button class="inline-block p-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 active:opacity-85 text-slate-700">
           <i class="fa fa-close"></i>
         </button>
       </div>
       <!-- End Toggle Button -->
     </div>
-    <hr class="h-px mx-0 my-1 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
+    <hr class="h-px mx-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
     <div class="flex-auto p-6 pt-0 sm:pt-4">
       <!-- Sidebar Backgrounds -->
       <div class="hidden">
@@ -85,7 +85,7 @@
         </form>
       </div>
 
-      <hr class="h-px bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent sm:my-6" />
+      <hr class="h-px bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
       <form action="/logout" method="POST">
         @csrf
         <button type="submit" class="inline-block w-full px-4 py-3 mb-2 ml-2 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg cursor-pointer xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-purple-700 xl-max:to-pink-500 xl-max:text-white xl-max:border-0 hover:scale-102 hover:shadow-soft-xs active:opacity-85 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 border-fuchsia-500 bg-none text-fuchsia-500 hover:border-fuchsia-500">
