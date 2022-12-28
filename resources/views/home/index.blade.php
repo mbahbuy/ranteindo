@@ -160,9 +160,8 @@
                     <div class="icon">
                       <img src="{{ asset('assets') }}/img/service-icon-01.png" alt="">
                     </div>
-                    <div class="count-digit">320</div>
-                    <div class="count-title">SEO Projects</div>
-                    <p>Lorem ipsum dolor sitti amet, consectetur.</p>
+                    <div class="count-digit text-center">199</div>
+                    <div class="count-title text-center">Projek Selesai</div>
                   </div>
                 </div>
               </div>
@@ -172,9 +171,8 @@
                     <div class="icon">
                       <img src="{{ asset('assets') }}/img/service-icon-02.png" alt="">
                     </div>
-                    <div class="count-digit">640</div>
-                    <div class="count-title">Websites</div>
-                    <p>Lorem ipsum dolor sitti amet, consectetur.</p>
+                    <div class="count-digit text-center">100</div>
+                    <div class="count-title text-center">Industrial Client</div>
                   </div>
                 </div>
               </div>
@@ -184,9 +182,8 @@
                     <div class="icon">
                       <img src="{{ asset('assets') }}/img/service-icon-03.png" alt="">
                     </div>
-                    <div class="count-digit">120</div>
-                    <div class="count-title">Satisfied Clients</div>
-                    <p>Lorem ipsum dolor sitti amet, consectetur.</p>
+                    <div class="count-digit text-center">499</div>
+                    <div class="count-title text-center">Pendiri</div>
                   </div>
                 </div>
               </div>

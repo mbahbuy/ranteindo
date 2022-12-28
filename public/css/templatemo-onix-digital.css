@@ -1097,6 +1097,10 @@ About
 }
 
 .about-us .fact-item .icon {
+  text-align: center;
+}
+
+.about-us .fact-item .icon img {
   width: 45px;
   height: 45px;
 }

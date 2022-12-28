@@ -8,4 +8,60 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    
+    public function parent(){
+        return $this->belongsTo(self::class, 'parent_id');
+    }
+    
+    public function children(){
+        return $this->hasMany(self::class, 'children_id');
+    }
+    
+    public function views()
+    {
+        return $this->hasMany('App\Models\Views', 'image', 'href');
+    }
+
+    public function Icons()
+    {
+        $icon = self::select(["title","body","href"])->where('parent_id', 1)->get();
+        return $icon;
+    }
+
+    public function TopItem()
+    {
+        $item = self::where('parent_id', 2)->get();
+        return $item;
+    }
+
+    public function ServicesItem()
+    {
+        $item = self::where('parent_id', 3)->get();
+        return $item;
+    }
+
+    public function ProjectItem()
+    {
+        $item = self::where('parent_id', 4)->get();
+        return $item;
+    }
+
+    public function ContactInfoEmail()
+    {
+        $item = self::where('parent_id', 5)->where('children_id', 1)->get();
+        return $item;
+    }
+
+    public function ContactInfoTlp()
+    {
+        $item = self::where('parent_id', 5)->where('children_id', 2)->get();
+        return $item;
+    }
+
+    public function Footer()
+    {
+        $item = self::where('parent_id', 6)->where('children_id', 1)->get();
+        return $item;
+    }
 }

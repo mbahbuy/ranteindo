@@ -3,6 +3,20 @@
 @section('dashboard')
 
 <section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
+    @if (session()->has('success'))
+    <div alert class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-green-600 to-lime-400 border-lime-300" id="alert">
+      {{ session('success') }}
+      <button type="button" onclick="closeAlert()" class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+      </button>
+    </div>
+    <script>
+      function closeAlert() {
+        const btn = document.getElementById('alert');
+        btn.className += ' hidden ';
+      }
+    </script>
+  @endif
     <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Logo</h2>
     <form method="POST" action="{{ route('views.logo.update') }}" enctype="multipart/form-data">
         @csrf

@@ -42,9 +42,16 @@
         form#contact {
           background-image: url(./assets/img/contact-form-bg.png);
         }
+
+
+      .dd-selected-image, .dd-option-image {
+        max-width: 50px !important;
+      }
+      .dd-selected {
+        max-height: 60px !important;
+      }
       </style>
       <!-- Scripts -->
-      <script src="{{ asset('js') }}/jquery.min.js"></script>
       <script src="{{ asset('js') }}/bootstrap.bundle.min.js"></script>
     @endif
 
@@ -60,6 +67,7 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
     <link href="{{ asset('css') }}/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
+    <script src="{{ asset('js') }}/jquery.min.js"></script>
 
   </head>
 

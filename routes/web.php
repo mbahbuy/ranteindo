@@ -25,39 +25,39 @@ Route::group(['middleware' => 'auth'], function() {
     // TOP
     Route::get('/dashboard/home', ['as' => 'views.top', 'uses' => 'ViewsController@Top']);
     Route::post('/dashboard/home/img', ['as' => 'views.top.img', 'uses' => 'ViewsController@TopImage']);
-    Route::post('/dashboard/home/text', ['as' => 'views.top.text', 'uses' => 'ViewsController@TopText']);
-    Route::delete('/dashboard/home/text/{views}', ['as' => 'views.top.text.delete', 'uses' => 'ViewsController@TopTextDlt']);
+    Route::post('/dashboard/home/item', ['as' => 'views.top.item', 'uses' => 'ItemController@TopItem']);
+    Route::delete('/dashboard/home/item/{item}', ['as' => 'views.top.item.delete', 'uses' => 'ItemController@TopItemDlt']);
 
     // Services
     Route::get('/dashboard/services', ['as' => 'views.services', 'uses' => 'ViewsController@Services']);
     Route::post('/dashboard/services/title', ['as' => 'views.services.title', 'uses' => 'ViewsController@ServicesTitle']);
-    Route::post('/dashboard/services/item', ['as' => 'views.services.item', 'uses' => 'ViewsController@ServicesItem']);
-    Route::delete('/dashboard/services/item/{views}', ['as' => 'views.services.item.delete', 'uses' => 'ViewsController@ServicesItemDlt']);
+    Route::post('/dashboard/services/item', ['as' => 'views.services.item', 'uses' => 'ItemController@ServicesItem']);
+    Route::delete('/dashboard/services/item/{item}', ['as' => 'views.services.item.delete', 'uses' => 'ItemController@ServicesItemDlt']);
 
     // About
     Route::get('/dashboard/about', ['as' => 'views.about', 'uses' => 'ViewsController@About']);
-    Route::post('/dashboard/about/title', ['as' => 'views.about.title', 'uses' => 'ViewsController@AboutTitle']);
-    Route::post('/dashboard/about/item', ['as' => 'views.about.item', 'uses' => 'ViewsController@AboutItem']);
-    Route::get('/dashboard/about/item/{views}', ['as' => 'views.about.item.delete', 'uses' => 'ViewsController@AboutItemDlt']);
+    Route::post('/dashboard/about/img', ['as' => 'views.about.img', 'uses' => 'ViewsController@AboutImage']);
+    Route::post('/dashboard/about/text', ['as' => 'views.about.text', 'uses' => 'ViewsController@AboutText']);
+    Route::post('/dashboard/about/relationship', ['as' => 'views.about.relationship', 'uses' => 'ViewsController@AboutRelationship']);
+    Route::post('/dashboard/about/relationship/icon', ['as' => 'views.about.relationship.icon', 'uses' => 'ViewsController@AboutRelationshipIcon']);
 
     // Project
     Route::get('/dashboard/project', ['as' => 'views.project', 'uses' => 'ViewsController@Project']);
     Route::post('/dashboard/project/title', ['as' => 'views.project.title', 'uses' => 'ViewsController@ProjectTitle']);
-    Route::post('/dashboard/project/item', ['as' => 'views.project.item', 'uses' => 'ViewsController@ProjectItem']);
-    Route::get('/dashboard/project/item/{views}', ['as' => 'views.project.item.delete', 'uses' => 'ViewsController@ProjectItemDlt']);
+    Route::post('/dashboard/project/item', ['as' => 'views.project.item', 'uses' => 'ItemController@ProjectItem']);
+    Route::delete('/dashboard/project/item/{item}', ['as' => 'views.project.item.delete', 'uses' => 'ItemController@ProjectItemDlt']);
 
     // Contact Us
     Route::get('/dashboard/contact', ['as' => 'views.contact', 'uses' => 'ViewsController@Contact']);
     Route::post('/dashboard/contact/title', ['as' => 'views.contact.title', 'uses' => 'ViewsController@ContactTitle']);
-    Route::post('/dashboard/contact/map', ['as' => 'views.contact.map', 'uses' => 'ViewsController@ContactMap']);
-    Route::post('/dashboard/contact/info/tlp', ['as' => 'views.contact.info.tlp', 'uses' => 'ViewsController@ContactInfoTlp']);
-    Route::post('/dashboard/contact/info/email', ['as' => 'views.contact.info.email', 'uses' => 'ViewsController@ContactInfoEmail']);
-    Route::delete('/dashboard/contact/info/tlp/{views}', ['as' => 'views.contact.info.tlp.delete', 'uses' => 'ViewsController@ContactInfoTlpDlt']);
-    Route::delete('/dashboard/contact/info/email/{views}', ['as' => 'views.contact.info.email.delete', 'uses' => 'ViewsController@ContactInfoEmailDlt']);
+    Route::post('/dashboard/contact/info/tlp', ['as' => 'views.contact.info.tlp', 'uses' => 'ItemController@ContactInfoTlp']);
+    Route::post('/dashboard/contact/info/email', ['as' => 'views.contact.info.email', 'uses' => 'ItemController@ContactInfoEmail']);
+    Route::delete('/dashboard/contact/info/tlp/{item}', ['as' => 'views.contact.info.tlp.delete', 'uses' => 'ItemController@ContactInfoTlpDlt']);
+    Route::delete('/dashboard/contact/info/email/{item}', ['as' => 'views.contact.info.email.delete', 'uses' => 'ItemController@ContactInfoEmailDlt']);
 
     // Footer
     Route::get('/dashboard/footer', ['as' => 'views.footer', 'uses' => 'ViewsController@Footer']);
-    Route::post('/dashboard/footer/item', ['as' => 'views.footer.item', 'uses' => 'ViewsController@FooterItem']);
-    Route::delete('/dashboard/footer/item/{views}', ['as' => 'views.footer.item.delete', 'uses' => 'ViewsController@FooterItemDlt']);
+    Route::post('/dashboard/footer/item', ['as' => 'views.footer.item', 'uses' => 'ItemController@FooterItem']);
+    Route::delete('/dashboard/footer/item/{item}', ['as' => 'views.footer.item.delete', 'uses' => 'ItemController@FooterItemDlt']);
 
 });
