@@ -15,33 +15,18 @@
       <link rel="stylesheet" href="{{ asset('css') }}/owl.css">
       <link rel="stylesheet" href="{{ asset('css') }}/templatemo-onix-digital.css">
       <style>
-        .main-banner:after {
-          background-image: url(./assets/img/baner-dec-left.png);
-        }
-        .main-banner:before {
-          background-image: url(./assets/img/banner-right-image.png);
-        }
-        .our-portfolio .item .hover-effect {
-          background-image: url(./assets/img/hover-bg.png);
-        }
-        .pricing-tables .first-item {
-          background-image: url(./assets/img/first-plan-bg.png);
-        }
-        .pricing-tables .second-item {
-          background-image: url(./assets/img/second-plan-bg.png);
-        }
-        .pricing-tables .third-item {
-          background-image: url(./assets/img/third-plan-bg.png);
-        }
-        .subscribe .inner-content {
-          background-image: url(./assets/img/subscribe-bg.png);
-        }
-        .subscribe .inner-content:after {
-          background-image: url(./assets/img/subscribe-dec.png);
-        }
-        form#contact {
-          background-image: url(./assets/img/contact-form-bg.png);
-        }
+      .main-banner:after {
+        background-image: url(./assets/img/baner-dec-left.png);
+      }
+      .main-banner:before {
+        background-image: url(./assets/{{ App\Models\Views::TopImg() }});
+      }
+      .our-portfolio .item .hover-effect {
+        background-image: url(./assets/img/hover-bg.png);
+      }
+      form#contact {
+        background-image: url(./assets/img/contact-form-bg.png);
+      }
 
 
       .dd-selected-image, .dd-option-image {

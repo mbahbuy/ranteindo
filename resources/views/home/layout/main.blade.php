@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Onix Digital Marketing HTML5 Template</title>
+    <title>Ranteindo Teknik Mandiri &#8211; Masa Depan Manufaktur Indonesia</title>
     
     <!-- Additional CSS Files -->
     <link href="{{ asset('css') }}/bootstrap.min.css" rel="stylesheet">
@@ -24,25 +24,10 @@
         background-image: url(./assets/img/baner-dec-left.png);
       }
       .main-banner:before {
-        background-image: url(./assets/img/banner-right-image.png);
+        background-image: url(./assets/{{ App\Models\Views::TopImg() }});
       }
       .our-portfolio .item .hover-effect {
         background-image: url(./assets/img/hover-bg.png);
-      }
-      .pricing-tables .first-item {
-        background-image: url(./assets/img/first-plan-bg.png);
-      }
-      .pricing-tables .second-item {
-        background-image: url(./assets/img/second-plan-bg.png);
-      }
-      .pricing-tables .third-item {
-        background-image: url(./assets/img/third-plan-bg.png);
-      }
-      .subscribe .inner-content {
-        background-image: url(./assets/img/subscribe-bg.png);
-      }
-      .subscribe .inner-content:after {
-        background-image: url(./assets/img/subscribe-dec.png);
       }
       form#contact {
         background-image: url(./assets/img/contact-form-bg.png);

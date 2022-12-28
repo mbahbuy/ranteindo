@@ -1,39 +1,63 @@
-<footer>
+  <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
           <div class="about footer-item">
             <div class="logo">
-              <a href="#"><img src="{{ asset('assets') }}/img/ranteindo.png" alt="Ranteindo"></a>
+              <a href="#"><img src="{{ asset('assets') . '/' . App\Models\Views::Logo() }}" alt="Ranteindo"></a>
             </div>
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
+            @if ($footer->count())
+                <ul>
+                  @foreach ($footer as $item)
+                    <li><a href="{{ $item->href }}" target="_blank"><i class="fa {{ $item->image }}"></i></a></li>
+                  @endforeach
+                </ul>
+            @else                
+              <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              </ul>
+            @endif
           </div>
         </div>
         <div class="col-lg-3">
           <div class="services footer-item">
             <h4>Services</h4>
-            <ul>
-              <li><a href="#">SEO Development</a></li>
-              <li><a href="#">Business Growth</a></li>
-              <li><a href="#">Social Media Managment</a></li>
-              <li><a href="#">Website Optimization</a></li>
-            </ul>
+            @if ($services->count())
+              <ul>
+                @foreach ($services as $item)
+                  <li><a href="#">{{ $item->title }}</a></li>
+                @endforeach 
+              </ul>
+            @else                
+              <ul>
+                <li><a href="#">SEO Development</a></li>
+                <li><a href="#">Business Growth</a></li>
+                <li><a href="#">Social Media Managment</a></li>
+                <li><a href="#">Website Optimization</a></li>
+              </ul>
+            @endif
           </div>
         </div>
         <div class="col-lg-3">
           <div class="community footer-item">
             <h4>Portfolio</h4>
-            <ul>
-              <li><a href="#">Digital Marketing</a></li>
-              <li><a href="#">Business Ideas</a></li>
-              <li><a href="#">Website Checkup</a></li>
-              <li><a href="#">Page Speed Test</a></li>
-            </ul>
+            @if ($project->count())
+                <ul>
+                  @foreach ($project as $item)
+                    <li><a href="#">{{ $item->title }}</a></li>
+                  @endforeach
+                </ul>
+            @else                
+              <ul>
+                <li><a href="#">Digital Marketing</a></li>
+                <li><a href="#">Business Ideas</a></li>
+                <li><a href="#">Website Checkup</a></li>
+                <li><a href="#">Page Speed Test</a></li>
+              </ul>
+            @endif
           </div>
         </div>
         <div class="col-lg-3">
@@ -49,7 +73,7 @@
         </div>
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2021 PT. Ranteindo Teknik Mandiri</p>
+            <p>Copyright © 2022 PT. Ranteindo Teknik Mandiri</p>
           </div>
         </div>
       </div>
