@@ -100,53 +100,12 @@ class ViewsController extends Controller
 
     public function About()
     {
-        $iconselected = Views::AboutIcon();
-        $icondataproject =  Item::Icons();
-        foreach ($icondataproject as $key) {
-            $selected = ($iconselected['title'] == $key['href']) ? "selected" : '';
-            $dataproject[] = array(
-                "text" => $key['title'],
-                "value" => $key['body'],
-                "imageSrc" => asset('assets') . '/' . $key['href'],
-                $selected => $key['title']
-            );
-        }
-        $iconsproject = json_encode($dataproject);
-
-        $icondataclient =  Item::Icons();
-        foreach ($icondataclient as $key) {
-            $selected = ($iconselected['body'] == $key['href']) ? "selected" : '';
-            $dataclient[] = array(
-                "text" => $key['title'],
-                "value" => $key['body'],
-                "imageSrc" => asset('assets') . '/' . $key['href'],
-                $selected => $key['title']
-            );
-        }
-        $iconsclient = json_encode($dataclient);
-
-        $icondatapendiri =  Item::Icons();
-        foreach ($icondatapendiri as $key) {
-            $selected = ($iconselected['image'] == $key['href']) ? "selected" : '';
-            $datapendiri[] = array(
-                "text" => $key['title'],
-                "value" => $key['body'],
-                "imageSrc" => asset('assets') . '/' . $key['href'],
-                $selected => $key['title']
-            );
-        }
-        $iconspendiri = json_encode($datapendiri);
-
         return view('dashboard.views.about', [
             'title' => 'Dashboard - About',
             'aboutimg' => Views::AboutImg(),
             'abouttitle' => Views::AboutTitle(),
             'aboutbody' => Views::AboutBody(),
-            'aboutvalue' => Views::AboutValue(),
-            'projecticon' => $iconsproject,
-            'clienticon' => $iconsclient,
-            'pendiriicon' => $iconspendiri
-
+            'aboutvalue' => Views::AboutValue()
         ]);
     }
 
@@ -187,28 +146,6 @@ class ViewsController extends Controller
         return back()->with('success', 'About Text Berasil diperbarui!');
     }
 
-    public function AboutRelationshipIcon(Request $request)
-    {
-        $validatedData = $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            'image' => 'required'
-        ]);
-
-        $same = Views::AboutIcon();
-        if($validatedData['title'] != $same['title'] && $validatedData['body'] != $same['body'] && $validatedData['image'] != $same['image']){
-            $data['title'] = ($validatedData['title'] != $same['title'] ) ? $validatedData['title'] : $same['title'];
-            $data['body'] = ($validatedData['body'] != $same['body']) ? $validatedData['body'] : $same['body'];
-            $data['image'] = ($validatedData['image'] != $same['image']) ? $validatedData['image'] : $same['image'];
-            $data['parent_id'] = 4;
-            $data['children_id'] = 3;
-            Views::where('parent_id', $data['parent_id'])->where('children_id', $data['children_id'])->update(['active' => false]);
-            Views::create($data);
-        }
-
-        return back()->with('success', 'About Relationship Icon Berasil diperbarui!');
-    }
-
     public function AboutRelationship(Request $request)
     {
         $validatedData = $request->validate([
@@ -223,7 +160,7 @@ class ViewsController extends Controller
             $data['body'] = ($validatedData['body'] != $same['body']) ? $validatedData['body'] : $same['body'];
             $data['image'] = ($validatedData['image'] != $same['image']) ? $validatedData['image'] : $same['image'];
             $data['parent_id'] = 4;
-            $data['children_id'] = 4;
+            $data['children_id'] = 3;
             Views::where('parent_id', $data['parent_id'])->where('children_id', $data['children_id'])->update(['active' => false]);
             Views::create($data);
         }

@@ -64,10 +64,17 @@
       <!-- Navbar -->
       <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all shadow-none duration-250 ease-soft-in rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="true">
         <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
-          <nav>
-            <!-- breadcrumb -->
-            <h4 class="mb-0 font-bold capitalize">{{ Request::segment(count(request()->segments())) }}</h4>
-          </nav>
+          @if (!Request::is('dashboard'))
+            <button type="button" class="flex flex-column" onclick="history.back()">
+              <i class="fas fa-arrow-left ease-bounce text-sm group-hover:-translate-x-1.25 mr-1 leading-normal transition-all duration-200 px-4 py-2"></i>
+              <h4 class="mb-0 font-bold capitalize">{{ Request::segment(count(request()->segments())) }}</h4>
+            </button>
+          @else              
+            <nav>
+              <!-- breadcrumb -->
+              <h4 class="mb-0 font-bold capitalize">{{ Request::segment(count(request()->segments())) }}</h4>
+            </nav>
+          @endif
 
           @if (Request::is('dashboard'))
           <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -79,7 +86,7 @@
 
           <div class="flex items-center justify-end mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
             <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-              <li class="flex items-center px-4">
+              <li class="hidden">
                 <a class="p-0 transition-all text-sm ease-nav-brand text-slate-500">
                   <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
                 </a>

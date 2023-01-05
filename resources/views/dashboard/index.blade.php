@@ -183,10 +183,10 @@
             <div class="col-lg-4">
               <div class="fact-item">
                 <div class="count-area-content">
-                  <div class="icon">
-                    <img src="{{ asset('assets') . '/' . App\Models\Views::AboutIcon()->title }}" alt="">
+                  <div class="icon w-full">
+                    <img style="display:table-cell; vertical-align: middle" width="45" height="45"  src="{{ asset('assets') }}/img/service-icon-01.png" alt="">
                   </div>
-                  <div class="count-digit text-center">{{ App\Models\Views::AboutValue()->title }}</div>
+                  <div class="count-digit text-center">{{ $aboutprojectvalue }}</div>
                   <div class="count-title text-center">Projek Selesai</div>
                 </div>
               </div>
@@ -194,10 +194,10 @@
             <div class="col-lg-4">
               <div class="fact-item">
                 <div class="count-area-content">
-                  <div class="icon">
-                    <img src="{{ asset('assets') . '/' . App\Models\Views::AboutIcon()->body }}" alt="">
+                  <div class="icon w-full">
+                    <img style="display:table-cell; vertical-align: middle" width="45" height="45"  src="{{ asset('assets') }}/img/service-icon-02.png" alt="">
                   </div>
-                  <div class="count-digit text-center">{{ App\Models\Views::AboutValue()->body }}</div>
+                  <div class="count-digit text-center">{{ $aboutclientvalue }}</div>
                   <div class="count-title text-center">Industrial Client</div>
                 </div>
               </div>
@@ -205,11 +205,11 @@
             <div class="col-lg-4">
               <div class="fact-item">
                 <div class="count-area-content">
-                  <div class="icon">
-                    <img src="{{ asset('assets') . '/' . App\Models\Views::AboutIcon()->image }}" alt="">
+                  <div class="icon w-full">
+                    <img style="display:table-cell; vertical-align: middle" width="45" height="45"  src="{{ asset('assets') }}/img/service-icon-03.png" alt="">
                   </div>
-                  <div class="count-digit text-center">{{ App\Models\Views::AboutValue()->image }}</div>
-                  <div class="count-title text-center">Pendiri</div>
+                  <div class="count-digit text-center">{{ $aboutprojectberjalanvalue }}</div>
+                  <div class="count-title text-center">Project Berjalan</div>
                 </div>
               </div>
             </div>
@@ -513,7 +513,7 @@
                     <div class="menu">
                       <div class="active">
                         <div class="thumb">
-                          <img src="{{ asset('assets') }}/img/video-thumb-01.png" alt="">
+                          <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-01.png" alt="">
                           <div class="inner-content">
                             <h4>Project One</h4>
                             <span>SEO &amp; Marketing</span>
@@ -522,7 +522,7 @@
                       </div>
                       <div>
                         <div class="thumb">
-                          <img src="{{ asset('assets') }}/img/video-thumb-02.png" alt="">
+                          <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-02.png" alt="">
                           <div class="inner-content">
                             <h4>Second Project</h4>
                             <span>Advertising &amp; Marketing</span>
@@ -531,7 +531,7 @@
                       </div>
                       <div>
                         <div class="thumb">
-                          <img src="{{ asset('assets') }}/img/video-thumb-03.png" alt="Marketing">
+                          <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-03.png" alt="Marketing">
                           <div class="inner-content">
                             <h4>Project Three</h4>
                             <span>Digital &amp; Marketing</span>
@@ -540,7 +540,7 @@
                       </div>
                       <div>
                         <div class="thumb">
-                          <img src="{{ asset('assets') }}/img/video-thumb-04.png" alt="SEO Work">
+                          <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-04.png" alt="SEO Work">
                           <div class="inner-content">
                             <h4>Fourth Project</h4>
                             <span>SEO &amp; Advertising</span>
@@ -596,32 +596,32 @@
         </div>
       </div>
       <div class="col-lg-5 align-self-center">
-        <form id="contact" action="{{ route('contact.us') }}" method="post">
+        <form id="contact" action="#" method="post">
           @csrf
           <div class="row">
             <div class="col-lg-12">
               <fieldset>
-                <input type="text" name="name" id="name" placeholder="Nama Anda" autocomplete="on" required>
+                <input type="text" name="name" id="name" placeholder="Nama Anda" autocomplete="on" readonly>
               </fieldset>
             </div>
             <div class="col-lg-12">
               <fieldset>
-                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email Anda" required="">
+                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email Anda" readonly>
               </fieldset>
             </div>
             <div class="col-lg-12">
               <fieldset>
-                <input type="text" name="subject" id="subject" placeholder="subject" autocomplete="on" required>
+                <input type="text" name="subject" id="subject" placeholder="subject" autocomplete="on" readonly>
               </fieldset>
             </div>
             <div class="col-lg-12">
               <fieldset>
-                <input type="text" name="message" id="message"placeholder="Pesan/kritikan Anda"  required>
+                <input type="text" name="message" id="message"placeholder="Pesan/kritikan Anda"  readonly>
               </fieldset>
             </div>
             <div class="col-lg-12">
               <fieldset>
-                <button type="submit" id="form-submit" class="main-button">Kirim pesan</button>
+                <button type="button" id="form-submit" class="main-button">Kirim pesan</button>
               </fieldset>
             </div>
           </div>

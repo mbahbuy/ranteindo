@@ -39,7 +39,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/dashboard/about/img', ['as' => 'views.about.img', 'uses' => 'ViewsController@AboutImage']);
     Route::post('/dashboard/about/text', ['as' => 'views.about.text', 'uses' => 'ViewsController@AboutText']);
     Route::post('/dashboard/about/relationship', ['as' => 'views.about.relationship', 'uses' => 'ViewsController@AboutRelationship']);
-    Route::post('/dashboard/about/relationship/icon', ['as' => 'views.about.relationship.icon', 'uses' => 'ViewsController@AboutRelationshipIcon']);
 
     // Project
     Route::get('/dashboard/project', ['as' => 'views.project', 'uses' => 'ViewsController@Project']);

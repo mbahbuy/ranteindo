@@ -184,9 +184,9 @@
                 <div class="fact-item">
                   <div class="count-area-content">
                     <div class="icon">
-                      <img src="{{ asset('assets') . '/' . App\Models\Views::AboutIcon()->title }}" alt="">
+                      <img src="{{ asset('assets') }}/img/service-icon-01.png" alt="">
                     </div>
-                    <div class="count-digit text-center">{{ App\Models\Views::AboutValue()->title }}</div>
+                    <div class="count-digit text-center">{{ $aboutprojectvalue }}</div>
                     <div class="count-title text-center">Projek Selesai</div>
                   </div>
                 </div>
@@ -195,9 +195,9 @@
                 <div class="fact-item">
                   <div class="count-area-content">
                     <div class="icon">
-                      <img src="{{ asset('assets') . '/' . App\Models\Views::AboutIcon()->body }}" alt="">
+                      <img src="{{ asset('assets') }}/img/service-icon-02.png" alt="">
                     </div>
-                    <div class="count-digit text-center">{{ App\Models\Views::AboutValue()->body }}</div>
+                    <div class="count-digit text-center">{{ $aboutclientvalue }}</div>
                     <div class="count-title text-center">Industrial Client</div>
                   </div>
                 </div>
@@ -206,10 +206,10 @@
                 <div class="fact-item">
                   <div class="count-area-content">
                     <div class="icon">
-                      <img src="{{ asset('assets') . '/' . App\Models\Views::AboutIcon()->image }}" alt="">
+                      <img src="{{ asset('assets') }}/img/service-icon-03.png" alt="">
                     </div>
-                    <div class="count-digit text-center">{{ App\Models\Views::AboutValue()->image }}</div>
-                    <div class="count-title text-center">Pendiri</div>
+                    <div class="count-digit text-center">{{ $aboutprojectberjalanvalue }}</div>
+                    <div class="count-title text-center">Project Berjalan</div>
                   </div>
                 </div>
               </div>
@@ -513,7 +513,7 @@
                       <div class="menu">
                         <div class="active">
                           <div class="thumb">
-                            <img src="{{ asset('assets') }}/img/video-thumb-01.png" alt="">
+                            <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-01.png" alt="">
                             <div class="inner-content">
                               <h4>Project One</h4>
                               <span>SEO &amp; Marketing</span>
@@ -522,7 +522,7 @@
                         </div>
                         <div>
                           <div class="thumb">
-                            <img src="{{ asset('assets') }}/img/video-thumb-02.png" alt="">
+                            <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-02.png" alt="">
                             <div class="inner-content">
                               <h4>Second Project</h4>
                               <span>Advertising &amp; Marketing</span>
@@ -531,7 +531,7 @@
                         </div>
                         <div>
                           <div class="thumb">
-                            <img src="{{ asset('assets') }}/img/video-thumb-03.png" alt="Marketing">
+                            <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-03.png" alt="Marketing">
                             <div class="inner-content">
                               <h4>Project Three</h4>
                               <span>Digital &amp; Marketing</span>
@@ -540,7 +540,7 @@
                         </div>
                         <div>
                           <div class="thumb">
-                            <img src="{{ asset('assets') }}/img/video-thumb-04.png" alt="SEO Work">
+                            <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-04.png" alt="SEO Work">
                             <div class="inner-content">
                               <h4>Fourth Project</h4>
                               <span>SEO &amp; Advertising</span>

@@ -103,34 +103,10 @@ class Views extends Model
             return 'You can browse free HTML templates on Too CSS website. Visit the website and explore latest website templates for your projects.';
         }
     }
-    
-    public function AboutIcon()
-    {
-        $icon = self::select(['title', 'body', 'image'])->where('parent_id', 4)->where('children_id', 3)->where('active', true)->first();
-        if($icon == true){
-            if($icon !== '' || $icon !== null){
-                return $icon;
-            } else {
-                $datas = [
-                    "title" => "img/service-icon-01.png",
-                    "body" => "img/service-icon-02.png",
-                    "image" => "img/service-icon-03.png"
-                ];
-                return $datas;
-            }
-        } else {
-            $datas = [
-                "title" => "img/service-icon-01.png",
-                "body" => "img/service-icon-02.png",
-                "image" => "img/service-icon-03.png"
-            ];
-            return $datas;
-        }
-    }
 
     public function AboutValue()
     {
-        $data = self::select(['title', 'body', 'image'])->where('parent_id', 4)->where('children_id', 4)->where('active', true)->first();
+        $data = self::select(['title', 'body', 'image'])->where('parent_id', 4)->where('children_id', 3)->where('active', true)->first();
         if($data == true){
             if($data !== '' || $data !== null){
                 return $data;
