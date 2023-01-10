@@ -57,7 +57,7 @@
             </div>
             <div class="flex-auto p-4">
                 <div class="flex justify-center mx-3">
-                    <div class="w-full max-w-full shadow-soft-2xl justify-center px-3 mb-6 md:w-6/12 md:flex-none xl:mb-0 xl:w-6/12">
+                    <div class="w-full max-w-full shadow-soft-2xl justify-center px-3 mb-6 md:w-12/12 md:flex-none xl:mb-0 xl:w-12/12">
                         <div class="relative justify-center flex flex-col h-full min-w-0 break-words bg-transparent border border-solid shadow-none rounded-2xl border-slate-100 bg-clip-border">
                             <form role="form" method="POST" action="{{ route('views.footer.item') }}">
                                 @csrf
