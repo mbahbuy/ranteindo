@@ -388,7 +388,7 @@
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div class="main-blue-button-hover">
-                  <a href="#">Get Started</a>
+                  <a href="{{ route('project.contoh') }}">Read more...</a>
                 </div>
               </div>
             </div>
@@ -397,7 +397,7 @@
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div class="main-blue-button-hover">
-                  <a href="#">Get Started</a>
+                  <a href="{{ route('project.contoh') }}">Read more...</a>
                 </div>
               </div>
             </div>
@@ -406,7 +406,7 @@
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div class="main-blue-button-hover">
-                  <a href="#">Get Started</a>
+                  <a href="{{ route('project.contoh') }}">Read more...</a>
                 </div>
               </div>
             </div>
@@ -415,7 +415,7 @@
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div class="main-blue-button-hover">
-                  <a href="#">Get Started</a>
+                  <a href="{{ route('project.contoh') }}">Read more...</a>
                 </div>
               </div>
             </div>

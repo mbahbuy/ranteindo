@@ -88,10 +88,10 @@
     $('.owl-project').owlCarousel({
       items:4,
       loop:true,
-      dots: true,
-      nav: true,
+      dots: false,
+      nav: false,
       autoplay: true,
-      margin:30,
+      margin:5,
         responsive:{
             0:{
                 items:1

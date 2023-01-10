@@ -381,7 +381,7 @@
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <div class="main-blue-button-hover">
-                <a href="#">Get Started</a>
+                <a href="#">Read more...</a>
               </div>
             </div>
           </div>
@@ -390,7 +390,7 @@
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <div class="main-blue-button-hover">
-                <a href="#">Get Started</a>
+                <a href="#">Read more...</a>
               </div>
             </div>
           </div>
@@ -399,7 +399,7 @@
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <div class="main-blue-button-hover">
-                <a href="#">Get Started</a>
+                <a href="#">Read more...</a>
               </div>
             </div>
           </div>
@@ -408,7 +408,7 @@
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <div class="main-blue-button-hover">
-                <a href="#">Get Started</a>
+                <a href="#">Read more...</a>
               </div>
             </div>
           </div>
@@ -467,7 +467,7 @@
                       <li class="active">
                         <div>
                           <div class="thumb">
-                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JynGuQx4a1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/JynGuQx4a1Y/0.jpg">
                             <div class="overlay-effect">
                               <a href="#"><h4>Project One</h4></a>
                               <span>SEO &amp; Marketing</span>
@@ -478,7 +478,7 @@
                       <li>
                         <div>
                           <div class="thumb">
-                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/RdJBSFpcO4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/RdJBSFpcO4M/0.jpg">
                             <div class="overlay-effect">
                               <a href="#"><h4>Second Project</h4></a>
                               <span>Advertising &amp; Marketing</span>
@@ -489,7 +489,7 @@
                       <li>
                         <div>
                           <div class="thumb">
-                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZlfAjbQiL78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/ZlfAjbQiL78/0.jpg">
                             <div class="overlay-effect">
                               <a href="#"><h4>Project Three</h4></a>
                               <span>Digital &amp; Marketing</span>
@@ -500,8 +500,7 @@
                       <li>
                         <div>
                           <div class="thumb">
-                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/mx1WseE7-0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="overlay-effect">
+                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/mx1WseE7-0Y/0.jpg">
                               <a href="#"><h4>Fourth Project</h4></a>
                               <span>SEO &amp; Advertising</span>
                             </div>

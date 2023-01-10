@@ -37,16 +37,16 @@
             Dashboard
           </summary>
           <div class="flex items-center flex-col">
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ (Route::is('dashboard')) ? '#' : route('dashboard') }}">Index</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.top') }}">Home</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.services') }}">Services</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.about') }}">About</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.portfolio') }}">Portfolio</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.project') }}">Project</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.videos') }}">Videos</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.contact') }}">Contact</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.logo') }}">Logo</a>
-            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-0.5 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.footer') }}">Footer</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ (Route::is('dashboard')) ? '#' : route('dashboard') }}">Index</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.top') }}">Home</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.services') }}">Services</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.about') }}">About</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.portfolio') }}">Portfolio</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.project') }}">Project</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.videos') }}">Videos</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.contact') }}">Contact</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.logo') }}">Logo</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.footer') }}">Footer</a>
           </div>
         </details>
       </li>
