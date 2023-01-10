@@ -463,51 +463,52 @@
                     @endif
                   </ul>
                   @else                      
-                    <ul class="nacc">
-                      <li class="active">
-                        <div>
-                          <div class="thumb">
-                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/JynGuQx4a1Y/0.jpg">
-                            <div class="overlay-effect">
-                              <a href="#"><h4>Project One</h4></a>
-                              <span>SEO &amp; Marketing</span>
-                            </div>
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JynGuQx4a1Y" style="pointer-events: none" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <div class="overlay-effect">
+                            <a href="#"><h4>Project One</h4></a>
+                            <span>SEO &amp; Marketing</span>
                           </div>
                         </div>
-                      </li>
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/RdJBSFpcO4M/0.jpg">
-                            <div class="overlay-effect">
-                              <a href="#"><h4>Second Project</h4></a>
-                              <span>Advertising &amp; Marketing</span>
-                            </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/RdJBSFpcO4M" style="pointer-events: none" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <div class="overlay-effect">
+                            <a href="#"><h4>Second Project</h4></a>
+                            <span>Advertising &amp; Marketing</span>
                           </div>
                         </div>
-                      </li>
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/ZlfAjbQiL78/0.jpg">
-                            <div class="overlay-effect">
-                              <a href="#"><h4>Project Three</h4></a>
-                              <span>Digital &amp; Marketing</span>
-                            </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZlfAjbQiL78" style="pointer-events: none" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <div class="overlay-effect">
+                            <a href="#"><h4>Project Three</h4></a>
+                            <span>Digital &amp; Marketing</span>
                           </div>
                         </div>
-                      </li>
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <img class="img-fluid w-full" src="http://img.youtube.com/vi/mx1WseE7-0Y/0.jpg">
-                              <a href="#"><h4>Fourth Project</h4></a>
-                              <span>SEO &amp; Advertising</span>
-                            </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/mx1WseE7-0Y" style="pointer-events: none" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <div class="overlay-effect">
+                            <a href="#"><h4>Fourth Project</h4></a>
+                            <span>SEO &amp; Advertising</span>
                           </div>
                         </div>
-                      </li>
-                    </ul>
+                      </div>
+                    </li>
+                  </ul>
                   @endif
                 </div>
                 <div class="col-lg-4">
