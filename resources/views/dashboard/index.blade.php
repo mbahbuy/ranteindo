@@ -438,7 +438,7 @@
                     <li class="active">
                       <div>
                         <div class="thumb">
-                          <img class="img-fluid w-full" src="http://img.youtube.com/vi/{{ $videos[0]->href }}/0.jpg">
+                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{ $videos[0]->href }}" style="pointer-events: none" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           <div class="overlay-effect">
                             <h4>{{ $videos[0]->title }}</h4>
                             <span>{{ $videos[0]->body }}</span>
@@ -451,7 +451,7 @@
                         <li>
                           <div>
                             <div class="thumb">
-                              <img class="img-fluid w-full" src="http://img.youtube.com/vi/{{ $item->href }}/0.jpg">
+                              <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{ $item->href }}" style="pointer-events: none" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                               <div class="overlay-effect">
                                 <h4>{{ $item->title }}</h4>
                                 <span>{{ $item->body }}</span>
