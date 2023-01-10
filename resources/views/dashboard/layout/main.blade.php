@@ -24,10 +24,32 @@
       .our-portfolio .item .hover-effect {
         background-image: url(./assets/img/hover-bg.png);
       }
+      .pricing-tables .item {
+        background-image: url(./assets/img/second-plan-bg.png);
+      }
       form#contact {
         background-image: url(./assets/img/contact-form-bg.png);
       }
-
+      .post{
+        position: relative;
+        border-radius: 23px;
+      }
+      .post img{
+        border-radius: 23px;
+      }
+      .overlay-post{
+        background: rgb(255,104,95);
+        background: linear-gradient(105deg, rgba(255,104,95,1) 0%, rgba(255,144,104,1) 100%);
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30%;
+        border-top-left-radius: 23px;
+        border-bottom-right-radius: 23px;
+        padding: 35px 30px;
+        text-align: center;
+      }
 
       .dd-selected-image, .dd-option-image {
         max-width: 50px !important;
@@ -51,6 +73,13 @@
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
+    <link rel="stylesheet" href="{{ URL::asset('/css/trix.css') }}">
+    <script type="text/javascript" src="{{ URL::asset('/js/trix.js') }}"></script>
+    <style>
+      trix-toolbar [data-trix-button-group="file-tools"]{
+        display: none;
+      }
+    </style>
     <link href="{{ asset('css') }}/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
     <script src="{{ asset('js') }}/jquery.min.js"></script>
 
@@ -190,6 +219,29 @@
               }
         })
 
+        $('.owl-project').owlCarousel({
+          items:4,
+          loop:true,
+          dots: true,
+          nav: true,
+          autoplay: true,
+          margin:30,
+            responsive:{
+                0:{
+                    items:1
+                },
+                700:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                },
+                1600:{
+                    items:4
+                }
+            }
+        })
+
         $('#logo').click(function() {
           location.href = "{{ route('views.logo') }}";
         });
@@ -203,7 +255,13 @@
           location.href = "{{ route('views.about') }}";
         });
         $('#portfolio').click(function(){
+          location.href = "{{ route('views.portfolio') }}";
+        });
+        $('#project').click(function(){
           location.href = "{{ route('views.project') }}";
+        });
+        $('#video').click(function(){
+          location.href = "{{ route('views.videos') }}";
         });
         $('#contact').click(function(){
           location.href = "{{ route('views.contact') }}";

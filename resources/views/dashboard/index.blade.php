@@ -228,7 +228,7 @@
     <div class="row">
       <div class="col-lg-6 offset-lg-3">
         <div class="section-heading">
-          <h2>{{ App\Models\Views::ProjectTitle() }}</h2>
+          <h2>{{ App\Models\Views::PortfolioTitle() }}</h2>
         </div>
       </div>
     </div>
@@ -237,15 +237,16 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="owl-carousel owl-portfolio">
-          @if ($project->count())
-              @foreach ($project as $item)
+          @if ($portfolio->count())
+              @foreach ($portfolio->take(6) as $item)
                 <div class="item">
                   <div class="thumb">
                     <img src="{{ asset('assets') . '/' . $item->image }}" alt="">
                     <div class="hover-effect">
                       <div class="inner-content">
-                        <a href="#"><h4>{{ $item->title }}</h4></a>
-                        <span>{{ $item->body }}</span>
+                        <h4>{{ $item->title }}</h4>
+                        <span>{{ $item->excerpt }}</span>
+                        <a href="#">Read more...</a>
                       </div>
                     </div>
                   </div>
@@ -257,8 +258,9 @@
                 <img src="{{ asset('assets') }}/img/portfolio-01.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent"><h4>First Project</h4></a>
+                    <h4>First Project</h4>
                     <span>Plot Listing</span>
+                    <a href="#">Read more...</a>
                   </div>
                 </div>
               </div>
@@ -268,8 +270,9 @@
                 <img src="{{ asset('assets') }}/img/portfolio-02.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <a href="#"><h4>Project Two</h4></a>
+                    <h4>Project Two</h4>
                     <span>SEO &amp; Marketing</span>
+                    <a href="#">Read more...</a>
                   </div>
                 </div>
               </div>
@@ -279,8 +282,9 @@
                 <img src="{{ asset('assets') }}/img/portfolio-03.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic" target="_parent"><h4>Third Project</h4></a>
+                    <h4>Third Project</h4>
                     <span>Space Dynamic SEO</span>
+                    <a href="#">Read more...</a>
                   </div>
                 </div>
               </div>
@@ -290,8 +294,9 @@
                 <img src="{{ asset('assets') }}/img/portfolio-04.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <a href="#"><h4>Project Four</h4></a>
+                    <h4>Project Four</h4>
                     <span>Website Marketing</span>
+                    <a href="#">Read more...</a>
                   </div>
                 </div>
               </div>
@@ -301,8 +306,9 @@
                 <img src="{{ asset('assets') }}/img/portfolio-01.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <a href="#"><h4>Fifth Project</h4></a>
+                    <h4>Fifth Project</h4>
                     <span>Digital Assets</span>
+                    <a href="#">Read more...</a>
                   </div>
                 </div>
               </div>
@@ -312,8 +318,9 @@
                 <img src="{{ asset('assets') }}/img/portfolio-02.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <a href="#"><h4>Sixth Project</h4></a>
+                    <h4>Sixth Project</h4>
                     <span>SEO &amp; Marketing</span>
+                    <a href="#">Read more...</a>
                   </div>
                 </div>
               </div>
@@ -323,63 +330,9 @@
                 <img src="{{ asset('assets') }}/img/portfolio-03.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <a href="#"><h4>7th Project</h4></a>
+                    <h4>7th Project</h4>
                     <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="{{ asset('assets') }}/img/portfolio-04.jpg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4>8th Project</h4></a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="{{ asset('assets') }}/img/portfolio-01.jpg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4>9th Project</h4></a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="{{ asset('assets') }}/img/portfolio-02.jpg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4>Project Ten</h4></a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="{{ asset('assets') }}/img/portfolio-03.jpg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4>Project Eleven</h4></a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="{{ asset('assets') }}/img/portfolio-04.jpg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4>12th Project</h4></a>
-                    <span>SEO &amp; Marketing</span>
+                    <a href="#">Read more...</a>
                   </div>
                 </div>
               </div>
@@ -389,6 +342,81 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="project" class="pricing-tables">
+<div class="tables-left-dec">
+  <img src="{{ asset('assets/img') }}/tables-left-dec.png" alt="">
+</div>
+<div class="tables-right-dec">
+  <img src="{{ asset('assets/img') }}/tables-right-dec.png" alt="">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="section-heading">
+        <h2>{{ App\Models\Views::ProjectTitle() }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="owl-carousel owl-project">
+        @if ($project->count())
+            @foreach ($project as $item)
+            <div class="card">
+              <img src="{{ asset('assets') . '/' . $item->image }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ $item->title }}</h5>
+                <p class="card-text">{{ $item->excerpt }}</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Read more...</a>
+                </div>
+              </div>
+            </div>
+            @endforeach
+        @else              
+          <div class="card">
+            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="main-blue-button-hover">
+                <a href="#">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="main-blue-button-hover">
+                <a href="#">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="main-blue-button-hover">
+                <a href="#">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="main-blue-button-hover">
+                <a href="#">Get Started</a>
+              </div>
+            </div>
+          </div>
+        @endif
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <div id="video" class="our-videos section">
@@ -405,27 +433,27 @@
           <div class="grid">
             <div class="row">
               <div class="col-lg-8">
-                @if ($project->count())
+                @if ($videos->count())
                   <ul class="nacc">
                     <li class="active">
                       <div>
                         <div class="thumb">
-                          <iframe width="100%" height="auto" src="{{ $project[0]->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <img class="img-fluid w-full" src="http://img.youtube.com/vi/{{ $videos[0]->href }}/0.jpg">
                           <div class="overlay-effect">
-                            <a href="#"><h4>{{ $project[0]->title }}</h4></a>
-                            <span>{{ $project[0]->body }}</span>
+                            <h4>{{ $videos[0]->title }}</h4>
+                            <span>{{ $videos[0]->body }}</span>
                           </div>
                         </div>
                       </div>
                     </li>
-                    @if ($project->skip(1))                          
-                      @foreach ($project->skip(1) as $item)
+                    @if ($videos->skip(1))                          
+                      @foreach ($videos->skip(1) as $item)
                         <li>
                           <div>
                             <div class="thumb">
-                              <iframe width="100%" height="auto" src="{{ $item->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                              <img class="img-fluid w-full" src="http://img.youtube.com/vi/{{ $item->href }}/0.jpg">
                               <div class="overlay-effect">
-                                <a href="#"><h4>{{ $item->title }}</h4></a>
+                                <h4>{{ $item->title }}</h4>
                                 <span>{{ $item->body }}</span>
                               </div>
                             </div>
@@ -484,22 +512,22 @@
                   @endif
                 </div>
                 <div class="col-lg-4">
-                  @if ($project->count())
+                  @if ($videos->count())
                     <div class="menu">
                       <div class="active">
                         <div class="thumb">
-                          <img src="{{ asset('assets') .'/' . $project[0]->image }}" class="img-fluid">
+                          <img src="http://img.youtube.com/vi/{{ $videos[0]->href }}/0.jpg" class="img-fluid">
                           <div class="inner-content">
-                            <h4>{{ $project[0]->title }}</h4>
-                            <span>{{ $project[0]->body }}</span>
+                            <h4>{{ $videos[0]->title }}</h4>
+                            <span>{{ $videos[0]->body }}</span>
                           </div>
                         </div>
                       </div>
-                      @if ($project->skip(1))                          
-                        @foreach ($project->skip(1) as $item)
+                      @if ($videos->skip(1))                          
+                        @foreach ($videos->skip(1) as $item)
                           <div>
                             <div class="thumb">
-                              <img src="{{ asset('assets') . '/' . $item->image }}" class="img-fluid">
+                              <img src="http://img.youtube.com/vi/{{ $item->href }}/0.jpg" class="img-fluid">
                               <div class="inner-content">
                                 <h4>{{ $item->title }}</h4>
                                 <span>{{ $item->body }}</span>
@@ -601,22 +629,22 @@
           <div class="row">
             <div class="col-lg-12">
               <fieldset>
-                <input type="text" name="name" id="name" placeholder="Nama Anda" autocomplete="on" readonly>
+                <input type="text" name="name" id="name" placeholder="Nama Anda" autocomplete="on" disabled>
               </fieldset>
             </div>
             <div class="col-lg-12">
               <fieldset>
-                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email Anda" readonly>
+                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email Anda" disabled>
               </fieldset>
             </div>
             <div class="col-lg-12">
               <fieldset>
-                <input type="text" name="subject" id="subject" placeholder="subject" autocomplete="on" readonly>
+                <input type="text" name="subject" id="subject" placeholder="subject" autocomplete="on" disabled>
               </fieldset>
             </div>
             <div class="col-lg-12">
               <fieldset>
-                <input type="text" name="message" id="message"placeholder="Pesan/kritikan Anda"  readonly>
+                <input type="text" name="message" id="message"placeholder="Pesan/kritikan Anda"  disabled>
               </fieldset>
             </div>
             <div class="col-lg-12">
@@ -646,21 +674,21 @@
     <div class="row">
       <div class="col-lg-3">
         <div class="about footer-item">
-          <div class="logo">
-            <a href="#"><img src="{{ asset('assets') . '/' . App\Models\Views::Logo() }}" alt="Ranteindo"></a>
+          <div class="logo" id="logo">
+            <a><img src="{{ asset('assets') . '/' . App\Models\Views::Logo() }}" alt="Ranteindo"></a>
           </div>
           @if ($footer->count())
               <ul id="footer">
                 @foreach ($footer as $item)
-                  <li><a href="{{ $item->href }}" target="_blank"><i class="fa {{ $item->image }}"></i></a></li>
+                  <li><a><i class="fa {{ $item->image }}"></i></a></li>
                 @endforeach
               </ul>
           @else                
             <ul id="footer">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a><i class="fa fa-facebook"></i></a></li>
+              <li><a><i class="fa fa-twitter"></i></a></li>
+              <li><a><i class="fa fa-behance"></i></a></li>
+              <li><a><i class="fa fa-instagram"></i></a></li>
             </ul>
           @endif
         </div>
@@ -671,15 +699,15 @@
           @if ($services->count())
             <ul>
               @foreach ($services as $item)
-                <li><a href="#">{{ $item->title }}</a></li>
+                <li><a>{{ $item->title }}</a></li>
               @endforeach 
             </ul>
           @else                
             <ul>
-              <li><a href="#">SEO Development</a></li>
-              <li><a href="#">Business Growth</a></li>
-              <li><a href="#">Social Media Managment</a></li>
-              <li><a href="#">Website Optimization</a></li>
+              <li><a>SEO Development</a></li>
+              <li><a>Business Growth</a></li>
+              <li><a>Social Media Managment</a></li>
+              <li><a>Website Optimization</a></li>
             </ul>
           @endif
         </div>
@@ -687,18 +715,18 @@
       <div class="col-lg-3">
         <div class="community footer-item">
           <h4>Portfolio</h4>
-          @if ($project->count())
+          @if ($portfolio->count())
               <ul>
-                @foreach ($project as $item)
-                  <li><a href="#">{{ $item->title }}</a></li>
+                @foreach ($portfolio as $item)
+                  <li><a>{{ $item->title }}</a></li>
                 @endforeach
               </ul>
           @else                
             <ul>
-              <li><a href="#">Digital Marketing</a></li>
-              <li><a href="#">Business Ideas</a></li>
-              <li><a href="#">Website Checkup</a></li>
-              <li><a href="#">Page Speed Test</a></li>
+              <li><a>Digital Marketing</a></li>
+              <li><a>Business Ideas</a></li>
+              <li><a>Website Checkup</a></li>
+              <li><a>Page Speed Test</a></li>
             </ul>
           @endif
         </div>
@@ -707,10 +735,10 @@
         <div class="subscribe-newsletters footer-item">
           <h4>Subscribe Newsletters</h4>
           <p>Dapatkan info terbaru kami pada inbox emailmu</p>
-          <form action="{{ route('subscribe') }}" method="post">
+          <form>
             @csrf
-            <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-            <button type="submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
+            <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" disabled>
+            <button type="button" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
           </form>
         </div>
       </div>

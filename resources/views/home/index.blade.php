@@ -228,7 +228,7 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
-            <h2>{{ App\Models\Views::ProjectTitle() }}</h2>
+            <h2>{{ App\Models\Views::PortfolioTitle() }}</h2>
           </div>
         </div>
       </div>
@@ -237,15 +237,16 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="owl-carousel owl-portfolio">
-            @if ($project->count())
-                @foreach ($project as $item)
+            @if ($portfolio->count())
+                @foreach ($portfolio->take(6) as $item)
                   <div class="item">
                     <div class="thumb">
                       <img src="{{ asset('assets') . '/' . $item->image }}" alt="">
                       <div class="hover-effect">
                         <div class="inner-content">
-                          <a href="#"><h4>{{ $item->title }}</h4></a>
-                          <span>{{ $item->body }}</span>
+                          <h4>{{ $item->title }}</h4>
+                          <span>{{ $item->excerpt }}</span>
+                          <a href="{{ route('portfolio.show', $item->slug) }}">Read more...</a>
                         </div>
                       </div>
                     </div>
@@ -257,8 +258,9 @@
                   <img src="{{ asset('assets') }}/img/portfolio-01.jpg" alt="">
                   <div class="hover-effect">
                     <div class="inner-content">
-                      <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent"><h4>First Project</h4></a>
+                      <h4>First Project</h4>
                       <span>Plot Listing</span>
+                      <a href="{{ route('portfolio.contoh') }}">Read more...</a>
                     </div>
                   </div>
                 </div>
@@ -268,8 +270,9 @@
                   <img src="{{ asset('assets') }}/img/portfolio-02.jpg" alt="">
                   <div class="hover-effect">
                     <div class="inner-content">
-                      <a href="#"><h4>Project Two</h4></a>
+                      <h4>Project Two</h4>
                       <span>SEO &amp; Marketing</span>
+                      <a href="{{ route('portfolio.contoh') }}">Read more...</a>
                     </div>
                   </div>
                 </div>
@@ -279,8 +282,9 @@
                   <img src="{{ asset('assets') }}/img/portfolio-03.jpg" alt="">
                   <div class="hover-effect">
                     <div class="inner-content">
-                      <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic" target="_parent"><h4>Third Project</h4></a>
+                      <h4>Third Project</h4>
                       <span>Space Dynamic SEO</span>
+                      <a href="{{ route('portfolio.contoh') }}">Read more...</a>
                     </div>
                   </div>
                 </div>
@@ -290,8 +294,9 @@
                   <img src="{{ asset('assets') }}/img/portfolio-04.jpg" alt="">
                   <div class="hover-effect">
                     <div class="inner-content">
-                      <a href="#"><h4>Project Four</h4></a>
+                      <h4>Project Four</h4>
                       <span>Website Marketing</span>
+                      <a href="{{ route('portfolio.contoh') }}">Read more...</a>
                     </div>
                   </div>
                 </div>
@@ -301,8 +306,9 @@
                   <img src="{{ asset('assets') }}/img/portfolio-01.jpg" alt="">
                   <div class="hover-effect">
                     <div class="inner-content">
-                      <a href="#"><h4>Fifth Project</h4></a>
+                      <h4>Fifth Project</h4>
                       <span>Digital Assets</span>
+                      <a href="{{ route('portfolio.contoh') }}">Read more...</a>
                     </div>
                   </div>
                 </div>
@@ -312,8 +318,9 @@
                   <img src="{{ asset('assets') }}/img/portfolio-02.jpg" alt="">
                   <div class="hover-effect">
                     <div class="inner-content">
-                      <a href="#"><h4>Sixth Project</h4></a>
+                      <h4>Sixth Project</h4>
                       <span>SEO &amp; Marketing</span>
+                      <a href="{{ route('portfolio.contoh') }}">Read more...</a>
                     </div>
                   </div>
                 </div>
@@ -323,63 +330,9 @@
                   <img src="{{ asset('assets') }}/img/portfolio-03.jpg" alt="">
                   <div class="hover-effect">
                     <div class="inner-content">
-                      <a href="#"><h4>7th Project</h4></a>
+                      <h4>7th Project</h4>
                       <span>SEO &amp; Marketing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{{ asset('assets') }}/img/portfolio-04.jpg" alt="">
-                  <div class="hover-effect">
-                    <div class="inner-content">
-                      <a href="#"><h4>8th Project</h4></a>
-                      <span>SEO &amp; Marketing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{{ asset('assets') }}/img/portfolio-01.jpg" alt="">
-                  <div class="hover-effect">
-                    <div class="inner-content">
-                      <a href="#"><h4>9th Project</h4></a>
-                      <span>SEO &amp; Marketing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{{ asset('assets') }}/img/portfolio-02.jpg" alt="">
-                  <div class="hover-effect">
-                    <div class="inner-content">
-                      <a href="#"><h4>Project Ten</h4></a>
-                      <span>SEO &amp; Marketing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{{ asset('assets') }}/img/portfolio-03.jpg" alt="">
-                  <div class="hover-effect">
-                    <div class="inner-content">
-                      <a href="#"><h4>Project Eleven</h4></a>
-                      <span>SEO &amp; Marketing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{{ asset('assets') }}/img/portfolio-04.jpg" alt="">
-                  <div class="hover-effect">
-                    <div class="inner-content">
-                      <a href="#"><h4>12th Project</h4></a>
-                      <span>SEO &amp; Marketing</span>
+                      <a href="{{ route('portfolio.contoh') }}">Read more...</a>
                     </div>
                   </div>
                 </div>
@@ -389,6 +342,95 @@
         </div>
       </div>
     </div>
+  <div class="d-flex justify-content-center">
+    <div class="justify-center">
+      @if ($portfolio->count() > 6)
+      <a class="btn btn-outline-info" href="{{ route('portfolio') }}">More Portfolio...</a>
+      @endif
+    </div>
+  </div>
+</div>
+
+<div id="project" class="pricing-tables">
+  <div class="tables-left-dec">
+    <img src="{{ asset('assets/img') }}/tables-left-dec.png" alt="">
+  </div>
+  <div class="tables-right-dec">
+    <img src="{{ asset('assets/img') }}/tables-right-dec.png" alt="">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="section-heading">
+          <h2>{{ App\Models\Views::ProjectTitle() }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="owl-carousel owl-project">
+          @if ($project->count())
+              @foreach ($project as $item)
+              <div class="card">
+                <img src="{{ asset('assets') . '/' . $item->image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $item->title }}</h5>
+                  <p class="card-text">{{ $item->excerpt }}</p>
+                  <div class="main-blue-button-hover">
+                    <a href="{{ route('project.show', $item->slug) }}">Read more...</a>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+          @else              
+            <div class="card">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Get Started</a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Get Started</a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Get Started</a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Get Started</a>
+                </div>
+              </div>
+            </div>
+          @endif
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="justify-center">
+      @if ($project->count() > 6)
+      <a class="btn btn-outline-info" href="{{ route('project') }}">More Project...</a>
+      @endif
+    </div>
+  </div>
 </div>
 
 <div id="video" class="our-videos section">
@@ -405,25 +447,25 @@
             <div class="grid">
               <div class="row">
                 <div class="col-lg-8">
-                  @if ($project->count())
+                  @if ($videos->count())
                     <ul class="nacc">
                       <li class="active">
                         <div>
                           <div class="thumb">
-                            <iframe width="100%" height="auto" src="{{ $project[0]->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{ $videos[0]->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="overlay-effect">
-                              <a href="#"><h4>{{ $project[0]->title }}</h4></a>
-                              <span>{{ $project[0]->body }}</span>
+                              <a href="#"><h4>{{ $videos[0]->title }}</h4></a>
+                              <span>{{ $videos[0]->body }}</span>
                             </div>
                           </div>
                         </div>
                       </li>
-                      @if ($project->skip(1))                          
-                        @foreach ($project->skip(1) as $item)
+                      @if ($videos->skip(1))                          
+                        @foreach ($videos->skip(1) as $item)
                           <li>
                             <div>
                               <div class="thumb">
-                                <iframe width="100%" height="auto" src="{{ $item->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{ $item->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="overlay-effect">
                                   <a href="#"><h4>{{ $item->title }}</h4></a>
                                   <span>{{ $item->body }}</span>
@@ -484,22 +526,22 @@
                     @endif
                   </div>
                   <div class="col-lg-4">
-                    @if ($project->count())
+                    @if ($videos->count())
                       <div class="menu">
                         <div class="active">
                           <div class="thumb">
-                            <img src="{{ asset('assets') .'/' . $project[0]->image }}" class="img-fluid">
+                            <img src="http://img.youtube.com/vi/{{ $videos[0]->href }}/0.jpg" class="img-fluid">
                             <div class="inner-content">
-                              <h4>{{ $project[0]->title }}</h4>
-                              <span>{{ $project[0]->body }}</span>
+                              <h4>{{ $videos[0]->title }}</h4>
+                              <span>{{ $videos[0]->body }}</span>
                             </div>
                           </div>
                         </div>
-                        @if ($project->skip(1))                          
-                          @foreach ($project->skip(1) as $item)
+                        @if ($videos->skip(1))                          
+                          @foreach ($videos->skip(1) as $item)
                             <div>
                               <div class="thumb">
-                                <img src="{{ asset('assets') . '/' . $item->image }}" class="img-fluid">
+                                <img src="http://img.youtube.com/vi/{{ $item->href }}/0.jpg" class="img-fluid">
                                 <div class="inner-content">
                                   <h4>{{ $item->title }}</h4>
                                   <span>{{ $item->body }}</span>

@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\{Route, Auth};
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('/project', ['as' => 'project', 'uses' => 'HomeController@Project']);
+Route::get('/project/{post:slug}', ['as' => 'project.show', 'uses' => 'HomeController@ProjectPost']);
+Route::get('/projectcontoh', ['as' => 'project.contoh', 'uses' => 'HomeController@ProjectContoh']);
+Route::get('/portfolio', ['as' => 'portfolio', 'uses' => 'HomeController@Portfolio']);
+Route::get('/portfolio/{post:slug}', ['as' => 'portfolio.show', 'uses' => 'HomeController@PortfolioPost']);
+Route::get('/portfoliocontoh', ['as' => 'portfolio.contoh', 'uses' => 'HomeController@PortfolioContoh']);
+
 
 Route::post('/contactus', ['as' => 'contact.us', 'uses' => 'ContactController@store']);
 Route::post('/subscribe', ['as' => 'subscribe', 'uses' => 'ContactController@subscribe']);
@@ -40,11 +47,22 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/dashboard/about/text', ['as' => 'views.about.text', 'uses' => 'ViewsController@AboutText']);
     Route::post('/dashboard/about/relationship', ['as' => 'views.about.relationship', 'uses' => 'ViewsController@AboutRelationship']);
 
+    // Portfolio
+    Route::get('/dashboard/portfolio', ['as' => 'views.portfolio', 'uses' => 'ViewsController@Portfolio']);
+    Route::post('/dashboard/portfolio/title', ['as' => 'views.portfolio.title', 'uses' => 'ViewsController@PortfolioTitle']);
+    Route::post('/dashboard/portfolio/post', ['as' => 'views.portfolio.post', 'uses' => 'PostController@PortfolioPost']);
+    Route::delete('/dashboard/portfolio/post/{post:slug}', ['as' => 'views.portfolio.post.delete', 'uses' => 'PostController@PortfolioPostDlt']);
+
     // Project
     Route::get('/dashboard/project', ['as' => 'views.project', 'uses' => 'ViewsController@Project']);
     Route::post('/dashboard/project/title', ['as' => 'views.project.title', 'uses' => 'ViewsController@ProjectTitle']);
-    Route::post('/dashboard/project/item', ['as' => 'views.project.item', 'uses' => 'ItemController@ProjectItem']);
-    Route::delete('/dashboard/project/item/{item}', ['as' => 'views.project.item.delete', 'uses' => 'ItemController@ProjectItemDlt']);
+    Route::post('/dashboard/project/post', ['as' => 'views.project.post', 'uses' => 'PostController@ProjectPost']);
+    Route::delete('/dashboard/project/post/{post:slug}', ['as' => 'views.project.post.delete', 'uses' => 'PostController@ProjectPostDlt']);
+
+    // Videos
+    Route::get('/dashboard/videos', ['as' => 'views.videos', 'uses' => 'ViewsController@Videos']);
+    Route::post('/dashboard/videos/item', ['as' => 'views.videos.item', 'uses' => 'ItemController@VideosItem']);
+    Route::delete('/dashboard/videos/item/{item}', ['as' => 'views.videos.item.delete', 'uses' => 'ItemController@VideosItemDlt']);
 
     // Contact Us
     Route::get('/dashboard/contact', ['as' => 'views.contact', 'uses' => 'ViewsController@Contact']);
@@ -58,5 +76,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard/footer', ['as' => 'views.footer', 'uses' => 'ViewsController@Footer']);
     Route::post('/dashboard/footer/item', ['as' => 'views.footer.item', 'uses' => 'ItemController@FooterItem']);
     Route::delete('/dashboard/footer/item/{item}', ['as' => 'views.footer.item.delete', 'uses' => 'ItemController@FooterItemDlt']);
+
+    Route::get('/checkSlug', ['as' => 'checkslug', 'uses' => 'PostController@Slug']);
 
 });

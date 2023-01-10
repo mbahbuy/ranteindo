@@ -24,14 +24,14 @@
             </div>
             <div class="flex-auto p-4">
                 <div class="flex justify-center">
-                    <p class="text-center">Title lama : <span>{{ $projecttitle }}</span></p>
+                    <p class="text-center">Title lama : <span>{{ $portfoliotitle }}</span></p>
                 </div>
-                <form method="POST" action="{{ route('views.project.title') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('views.portfolio.title') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="flex justify-center">
-                        <input type="hidden" name="old_title" value="{{ $projecttitle }}">
+                        <input type="hidden" name="old_title" value="{{ $portfoliotitle }}">
                         <div class="flex flex-col max-w-full p-1.5 overflow-hidden border rounded-lg dark:border-gray-600 lg:flex-row dark:focus-within:border-blue-300 focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
-                            <input class="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none dark:bg-gray-800 dark:placeholder-gray-400 focus:placeholder-transparent dark:focus:placeholder-transparent" type="text" name="title" placeholder="Project Title..." style="width: 500px">
+                            <input class="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none dark:bg-gray-800 dark:placeholder-gray-400 focus:placeholder-transparent dark:focus:placeholder-transparent" type="text" name="title" placeholder="Portfolio Title..." style="width: 500px">
                 
                             <button type="submit" class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85 ">Rubah</button>
                         </div>
@@ -52,7 +52,7 @@
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
             <div class="p-4 pb-0 mb-0 bg-white rounded-t-2xl">
                 <h6 class="mb-1">Posts</h6>
-                <p class="leading-normal text-sm">Tambahkan atau hapus beberapa project post</p>
+                <p class="leading-normal text-sm">Tambahkan atau hapus beberapa Portfolio post</p>
             </div>
             <div class="flex-auto p-4">
                 @if ($items->count())
@@ -88,13 +88,13 @@
                 @endif
             </div>
             <div class="p-4 pb-0 mb-0 bg-white item-center rounded-t-2xl">
-                <p class="leading-normal text-sm justify-center text-center">Form penambahan Post</p>
+                <p class="leading-normal text-sm justify-center text-center">Form penambahan post</p>
             </div>
             <div class="flex-auto p-4">
                 <div class="flex justify-center mx-3">
                     <div class="w-full max-w-full shadow-soft-2xl justify-center px-3 mb-6 md:w-12/12 md:flex-none xl:mb-0 xl:w-12/12">
                         <div class="relative justify-center flex flex-col h-full min-w-0 break-words bg-transparent border border-solid shadow-none rounded-2xl border-slate-100 bg-clip-border">
-                            <form role="form" method="POST" action="{{ route('views.project.post') }}" enctype="multipart/form-data">
+                            <form role="form" method="POST" action="{{ route('views.portfolio.post') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="flex-auto px-1 pt-6">
                                     <div class="mb-6">
@@ -131,13 +131,13 @@
                                         @enderror
                                     </div>
                                     <div class="mb-6">
+                                        <input id="body" type="hidden" name="body" value="{{ old('body') }}">
+                                        <trix-editor input="body" placeholder="Body ......."></trix-editor>
                                         @error('body')
                                             <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
                                                 <strong class="font-medium">{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                        <input id="body" type="hidden" name="body" value="{{ old('body') }}">
-                                        <trix-editor input="body" placeholder="Body ......."></trix-editor>
                                     </div>
                                 </div>
                                 <div class="text-center">

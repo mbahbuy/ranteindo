@@ -50,33 +50,33 @@ class ItemController extends Controller
         return back()->with('success', 'Service item telah dihapus');
     }
 
-    public function ProjectItem(Request $request)
+    public function VideosItem(Request $request)
     {
         $validatedData = $request->validate([
             'title' => 'required|min:5|max:255',
             'body' => 'nullable|max:255',
-            'image' => 'required|image|file|max:2048',
+            'image' => 'image|file|max:2048',
             'href' => 'required|min:5|max:255'
         ]);
 
-        if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->store('project');
-        } else {
-            $validatedData['image'] = null;
-        }
-
         $validatedData['parent_id'] = 4;
         $validatedData['children_id'] = 1;
+        if($request->file('image'))
+        {
+            $validatedData['image'] = $request->file('image')->store('videos-img');
+        };
         Item::create($validatedData);
 
-        return back()->with('success', 'Project item telah ditambahkan');
+        return back()->with('success', 'Videos item telah ditambahkan');
     }
 
-    public function ProjectItemDlt(Request $request, Item $item)
+    public function VideosItemDlt(Request $request, Item $item)
     {
-        Storage::delete($item->image);
+        if($item->image){
+            Storage::delete($item->image);
+        };
         $item->delete();
-        return back()->with('success', 'Project item telah dihapus');
+        return back()->with('success', 'Videos item telah dihapus');
     }
 
     public function ContactInfoEmail(Request $request)

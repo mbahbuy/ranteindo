@@ -31,37 +31,37 @@ class Item extends Model
 
     public function TopItem()
     {
-        $item = self::where('parent_id', 2)->get();
+        $item = self::where('parent_id', 2)->orderBy('id', 'DESC')->get();
         return $item;
     }
 
     public function ServicesItem()
     {
-        $item = self::where('parent_id', 3)->get();
+        $item = self::where('parent_id', 3)->orderBy('id', 'DESC')->get();
         return $item;
     }
 
-    public function ProjectItem()
+    public function VideosItem()
     {
-        $item = self::where('parent_id', 4)->get();
+        $item = self::where('parent_id', 4)->orderBy('id', 'DESC')->get();
         return $item;
     }
 
     public function ContactInfoEmail()
     {
-        $item = self::where('parent_id', 5)->where('children_id', 1)->get();
+        $item = self::where('parent_id', 5)->where('children_id', 1)->orderBy('id', 'DESC')->get();
         return $item;
     }
 
     public function ContactInfoTlp()
     {
-        $item = self::where('parent_id', 5)->where('children_id', 2)->get();
+        $item = self::where('parent_id', 5)->where('children_id', 2)->orderBy('id', 'DESC')->get();
         return $item;
     }
 
     public function Footer()
     {
-        $item = self::where('parent_id', 6)->where('children_id', 1)->get();
+        $item = self::where('parent_id', 6)->where('children_id', 1)->orderBy('id', 'DESC')->get();
         return $item;
     }
 }

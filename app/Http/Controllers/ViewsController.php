@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Views,Item};
+use App\Models\{Views,Item, Post};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -168,16 +168,16 @@ class ViewsController extends Controller
         return back()->with('success', 'About Relationship Value Berasil diperbarui!');
     }
 
-    public function Project()
+    public function Portfolio()
     {
-        return view('dashboard.views.project', [
-            'title' => 'Dashboard - Project',
-            'projecttitle' => Views::ProjectTitle(),
-            'items' => Item::ProjectItem()
+        return view('dashboard.views.portfolio', [
+            'title' => 'Dashboard - Portfolio',
+            'portfoliotitle' => Views::PortfolioTitle(),
+            'items' => Post::PortfolioPosts()
         ]);
     }
 
-    public function ProjectTitle(Request $request)
+    public function PortfolioTitle(Request $request)
     {
         $validatedData = $request->validate([
             'title' => 'required'
@@ -190,7 +190,40 @@ class ViewsController extends Controller
             Views::create($validatedData);
         };
 
+        return back()->with('success', 'Portfolio Title Berasil diperbarui!');
+    }
+
+    public function Project()
+    {
+        return view('dashboard.views.project', [
+            'title' => 'Dashboard - Portfolio',
+            'projecttitle' => Views::ProjectTitle(),
+            'items' => Post::ProjectPosts()
+        ]);
+    }
+
+    public function ProjectTitle(Request $request)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required'
+        ]);
+
+        $validatedData['parent_id'] = 6;
+        $validatedData['children_id'] = 1;
+        if($request->old_title !== $validatedData['title']){
+            Views::where('parent_id', $validatedData['parent_id'])->where('children_id', $validatedData['children_id'])->update(['active' => false]);
+            Views::create($validatedData);
+        };
+
         return back()->with('success', 'Project Title Berasil diperbarui!');
+    }
+
+    public function Videos()
+    {
+        return view('dashboard.views.videos', [
+            'title' => 'Dashboard - Videos',
+            'items' => Item::VideosItem()
+        ]);
     }
 
     public function Contact()
@@ -209,7 +242,7 @@ class ViewsController extends Controller
             'title' => 'required'
         ]);
 
-        $validatedData['parent_id'] = 6;
+        $validatedData['parent_id'] = 7;
         $validatedData['children_id'] = 1;
         if($request->old_title !== $validatedData['title']){
             Views::where('parent_id', $validatedData['parent_id'])->where('children_id', $validatedData['children_id'])->update(['active' => false]);

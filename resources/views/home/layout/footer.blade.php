@@ -27,7 +27,7 @@
             <h4>Services</h4>
             @if ($services->count())
               <ul>
-                @foreach ($services as $item)
+                @foreach ($services->take(4) as $item)
                   <li><a href="#">{{ $item->title }}</a></li>
                 @endforeach 
               </ul>
@@ -44,9 +44,9 @@
         <div class="col-lg-3">
           <div class="community footer-item">
             <h4>Portfolio</h4>
-            @if ($project->count())
+            @if ($portfolio->count())
                 <ul>
-                  @foreach ($project as $item)
+                  @foreach ($portfolio->take(4) as $item)
                     <li><a href="#">{{ $item->title }}</a></li>
                   @endforeach
                 </ul>

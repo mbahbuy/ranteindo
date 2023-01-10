@@ -128,7 +128,7 @@ class Views extends Model
         }
     }
 
-    public function ProjectTitle()
+    public function PortfolioTitle()
     {
         $title = self::select('title')->where('parent_id', 5)->where('children_id', 1)->where('active', true)->first();
         if($title == true){
@@ -142,9 +142,23 @@ class Views extends Model
         }
     }
 
-    public function ContactTitle()
+    public function ProjectTitle()
     {
         $title = self::select('title')->where('parent_id', 6)->where('children_id', 1)->where('active', true)->first();
+        if($title == true){
+            if($title->title !== '' || $title->title !== null){
+                return $title->title;
+            } else {
+                return 'Select a suitable plan for your next projects Our Plans';
+            }
+        } else {
+            return 'Select a suitable plan for your next projects Our Plans';
+        }
+    }
+
+    public function ContactTitle()
+    {
+        $title = self::select('title')->where('parent_id', 7)->where('children_id', 1)->where('active', true)->first();
         if($title == true){
             if($title->title !== '' || $title->title !== null){
                 return $title->title;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Views,Item};
+use App\Models\{Views,Item,Post};
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,7 +17,9 @@ class DashboardController extends Controller
             'aboutprojectvalue' => $aboutvalue['title'],
             'aboutclientvalue' => $aboutvalue['body'],
             'aboutprojectberjalanvalue' => $aboutvalue['image'],
-            'project' => Item::ProjectItem(),
+            'portfolio' => Post::PortfolioPosts(),
+            'project' => Post::ProjectPosts(),
+            'videos' => Item::VideosItem(),
             'contactemail' => Item::ContactInfoEmail(),
             'contacttlp' => Item::ContactInfoTlp(),
             'footer' => Item::Footer()

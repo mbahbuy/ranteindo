@@ -11,12 +11,34 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#services">Services</a></li>
-              <li class="scroll-to-section"><a href="#about">About</a></li>
-              <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
-              <li class="scroll-to-section"><a href="#video">Videos</a></li> 
-              <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
+              @switch($title)
+                  @case('Portfolio')
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#top">Home</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#services">Services</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#about">About</a></li>
+                      <li class="scroll-to-section"><a href="#portfolio" class="active">Portfolio</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#project">Project</a></li>
+                      <li class="scroll-to-section"><a href="#video">Videos</a></li> 
+                      <li class="scroll-to-section"><div class="main-red-button-hover"><a href="{{ route('home') }}#contact">Contact Us Now</a></div></li>                       
+                      @break
+                  @case('Project')
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#top">Home</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#services">Services</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#about">About</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#portfolio">Portfolio</a></li>
+                      <li class="scroll-to-section"><a href="#project" class="active">Project</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#video">Videos</a></li>
+                      <li class="scroll-to-section"><div class="main-red-button-hover"><a href="{{ route('home') }}#contact">Contact Us Now</a></div></li>                     
+                      @break
+                  @default                      
+                    <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                    <li class="scroll-to-section"><a href="#services">Services</a></li>
+                    <li class="scroll-to-section"><a href="#about">About</a></li>
+                    <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
+                    <li class="scroll-to-section"><a href="#project">Project</a></li>
+                    <li class="scroll-to-section"><a href="#video">Videos</a></li>
+                    <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
+              @endswitch
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>

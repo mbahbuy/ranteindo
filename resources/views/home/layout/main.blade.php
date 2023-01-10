@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Ranteindo Teknik Mandiri &#8211; Masa Depan Manufaktur Indonesia</title>
+    <title>Ranteindo Teknik Mandiri &#8211; {{ $title }}</title>
     
     <!-- Additional CSS Files -->
     <link href="{{ asset('css') }}/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +29,32 @@
       .our-portfolio .item .hover-effect {
         background-image: url(./assets/img/hover-bg.png);
       }
+      .pricing-tables .item {
+        background-image: url(./assets/img/second-plan-bg.png);
+      }
       form#contact {
         background-image: url(./assets/img/contact-form-bg.png);
+      }
+      .post{
+        position: relative;
+        border-radius: 23px;
+        display: block;
+      }
+      .post img{
+        border-radius: 23px;
+      }
+      .overlay-post{
+        background: rgb(255,104,95);
+        background: linear-gradient(105deg, rgba(255,104,95,1) 0%, rgba(255,144,104,1) 100%);
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30%;
+        border-top-left-radius: 23px;
+        border-bottom-right-radius: 23px;
+        padding: 35px 30px;
+        text-align: center;
       }
     </style>
     
