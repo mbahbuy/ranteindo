@@ -375,7 +375,6 @@
                 <img src="{{ asset('assets') . '/' . $item->image }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{ $item->title }}</h5>
-                  <p class="card-text">{{ $item->excerpt }}</p>
                   <div class="main-blue-button-hover">
                     <a href="{{ route('project.show', $item->slug) }}">Read more...</a>
                   </div>
@@ -446,7 +445,7 @@
           <div class="naccs">
             <div class="grid">
               <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8 overflow-auto" style="max-height: 685px">
                   @if ($videos->count())
                     <ul class="nacc">
                       <li class="active">

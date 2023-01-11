@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\{Route, Auth};
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::get('/project', ['as' => 'project', 'uses' => 'HomeController@Project']);
-Route::get('/project/{post:slug}', ['as' => 'project.show', 'uses' => 'HomeController@ProjectPost']);
-Route::get('/projectcontoh', ['as' => 'project.contoh', 'uses' => 'HomeController@ProjectContoh']);
+Route::get('/produk', ['as' => 'project', 'uses' => 'HomeController@Project']);
+Route::get('/produk/{post:slug}', ['as' => 'project.show', 'uses' => 'HomeController@ProjectPost']);
+Route::get('/produkcontoh', ['as' => 'project.contoh', 'uses' => 'HomeController@ProjectContoh']);
 Route::get('/portfolio', ['as' => 'portfolio', 'uses' => 'HomeController@Portfolio']);
 Route::get('/portfolio/{post:slug}', ['as' => 'portfolio.show', 'uses' => 'HomeController@PortfolioPost']);
 Route::get('/portfoliocontoh', ['as' => 'portfolio.contoh', 'uses' => 'HomeController@PortfolioContoh']);
@@ -54,10 +54,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/dashboard/portfolio/post/{post:slug}', ['as' => 'views.portfolio.post.delete', 'uses' => 'PostController@PortfolioPostDlt']);
 
     // Project
-    Route::get('/dashboard/project', ['as' => 'views.project', 'uses' => 'ViewsController@Project']);
-    Route::post('/dashboard/project/title', ['as' => 'views.project.title', 'uses' => 'ViewsController@ProjectTitle']);
-    Route::post('/dashboard/project/post', ['as' => 'views.project.post', 'uses' => 'PostController@ProjectPost']);
-    Route::delete('/dashboard/project/post/{post:slug}', ['as' => 'views.project.post.delete', 'uses' => 'PostController@ProjectPostDlt']);
+    Route::get('/dashboard/produk', ['as' => 'views.project', 'uses' => 'ViewsController@Project']);
+    Route::post('/dashboard/produk/title', ['as' => 'views.project.title', 'uses' => 'ViewsController@ProjectTitle']);
+    Route::post('/dashboard/produk/post', ['as' => 'views.project.post', 'uses' => 'PostController@ProjectPost']);
+    Route::delete('/dashboard/produk/post/{post:slug}', ['as' => 'views.project.post.delete', 'uses' => 'PostController@ProjectPostDlt']);
 
     // Videos
     Route::get('/dashboard/videos', ['as' => 'views.videos', 'uses' => 'ViewsController@Videos']);
