@@ -30,6 +30,15 @@
                       <li class="scroll-to-section"><a href="{{ route('home') }}#video">Videos</a></li>
                       <li class="scroll-to-section"><div class="main-red-button-hover"><a href="{{ route('home') }}#contact">Contact Us Now</a></div></li>                     
                       @break
+                  @case('Videos')
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#top">Home</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#services">Services</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#about">About</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#portfolio">Portfolio</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#project">Project</a></li>
+                      <li class="scroll-to-section"><a href="#video" class="active">Videos</a></li>
+                      <li class="scroll-to-section"><div class="main-red-button-hover"><a href="{{ route('home') }}#contact">Contact Us Now</a></div></li>                     
+                      @break
                   @default                      
                     <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                     <li class="scroll-to-section"><a href="#services">Services</a></li>

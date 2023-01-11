@@ -9,6 +9,7 @@ Route::get('/produkcontoh', ['as' => 'project.contoh', 'uses' => 'HomeController
 Route::get('/portfolio', ['as' => 'portfolio', 'uses' => 'HomeController@Portfolio']);
 Route::get('/portfolio/{post:slug}', ['as' => 'portfolio.show', 'uses' => 'HomeController@PortfolioPost']);
 Route::get('/portfoliocontoh', ['as' => 'portfolio.contoh', 'uses' => 'HomeController@PortfolioContoh']);
+Route::get('/videos', ['as' => 'videos', 'uses' => 'HomeController@Videos']);
 
 
 Route::post('/contactus', ['as' => 'contact.us', 'uses' => 'ContactController@store']);

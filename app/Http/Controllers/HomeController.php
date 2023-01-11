@@ -95,4 +95,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function Videos()
+    {
+        return view('home.videos', [
+            'title' => 'Videos',
+            'videos' => Item::VideosItem(),
+            'services' => Item::ServicesItem(),
+            'portfolio' => Post::PortfolioPosts(),
+            'footer' => Item::Footer()
+        ]);
+    }
+
 }

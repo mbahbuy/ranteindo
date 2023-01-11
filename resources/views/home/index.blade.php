@@ -445,7 +445,7 @@
           <div class="naccs">
             <div class="grid">
               <div class="row">
-                <div class="col-lg-8 overflow-auto" style="max-height: 685px">
+                <div class="col-lg-8">
                   @if ($videos->count())
                     <ul class="nacc">
                       <li class="active">
@@ -453,21 +453,19 @@
                           <div class="thumb">
                             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{ $videos[0]->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="overlay-effect">
-                              <a href="#"><h4>{{ $videos[0]->title }}</h4></a>
-                              <span>{{ $videos[0]->body }}</span>
+                              <h4>{{ $videos[0]->title }}</h4>
                             </div>
                           </div>
                         </div>
                       </li>
-                      @if ($videos->skip(1))                          
-                        @foreach ($videos->skip(1) as $item)
+                      @if ($videos->skip(1)->count())                          
+                        @foreach ($videos->skip(1)->take(3) as $item)
                           <li>
                             <div>
                               <div class="thumb">
                                 <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{ $item->href }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="overlay-effect">
-                                  <a href="#"><h4>{{ $item->title }}</h4></a>
-                                  <span>{{ $item->body }}</span>
+                                  <h4>{{ $item->title }}</h4>
                                 </div>
                               </div>
                             </div>
@@ -483,7 +481,6 @@
                               <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JynGuQx4a1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                               <div class="overlay-effect">
                                 <a href="#"><h4>Project One</h4></a>
-                                <span>SEO &amp; Marketing</span>
                               </div>
                             </div>
                           </div>
@@ -494,7 +491,6 @@
                               <iframe width="100%" height="auto" src="https://www.youtube.com/embed/RdJBSFpcO4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                               <div class="overlay-effect">
                                 <a href="#"><h4>Second Project</h4></a>
-                                <span>Advertising &amp; Marketing</span>
                               </div>
                             </div>
                           </div>
@@ -505,7 +501,6 @@
                               <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZlfAjbQiL78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                               <div class="overlay-effect">
                                 <a href="#"><h4>Project Three</h4></a>
-                                <span>Digital &amp; Marketing</span>
                               </div>
                             </div>
                           </div>
@@ -516,7 +511,6 @@
                               <iframe width="100%" height="auto" src="https://www.youtube.com/embed/mx1WseE7-0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                               <div class="overlay-effect">
                                 <a href="#"><h4>Fourth Project</h4></a>
-                                <span>SEO &amp; Advertising</span>
                               </div>
                             </div>
                           </div>
@@ -532,18 +526,16 @@
                             <img src="http://img.youtube.com/vi/{{ $videos[0]->href }}/0.jpg" class="img-fluid">
                             <div class="inner-content">
                               <h4>{{ $videos[0]->title }}</h4>
-                              <span>{{ $videos[0]->body }}</span>
                             </div>
                           </div>
                         </div>
                         @if ($videos->skip(1))                          
-                          @foreach ($videos->skip(1) as $item)
+                          @foreach ($videos->skip(1)->take(3) as $item)
                             <div>
                               <div class="thumb">
                                 <img src="http://img.youtube.com/vi/{{ $item->href }}/0.jpg" class="img-fluid">
                                 <div class="inner-content">
                                   <h4>{{ $item->title }}</h4>
-                                  <span>{{ $item->body }}</span>
                                 </div>
                               </div>
                             </div>
@@ -557,7 +549,6 @@
                             <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-01.png" alt="">
                             <div class="inner-content">
                               <h4>Project One</h4>
-                              <span>SEO &amp; Marketing</span>
                             </div>
                           </div>
                         </div>
@@ -566,7 +557,6 @@
                             <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-02.png" alt="">
                             <div class="inner-content">
                               <h4>Second Project</h4>
-                              <span>Advertising &amp; Marketing</span>
                             </div>
                           </div>
                         </div>
@@ -575,7 +565,6 @@
                             <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-03.png" alt="Marketing">
                             <div class="inner-content">
                               <h4>Project Three</h4>
-                              <span>Digital &amp; Marketing</span>
                             </div>
                           </div>
                         </div>
@@ -584,7 +573,6 @@
                             <img class="img-fluid" src="{{ asset('assets') }}/img/video-thumb-04.png" alt="SEO Work">
                             <div class="inner-content">
                               <h4>Fourth Project</h4>
-                              <span>SEO &amp; Advertising</span>
                             </div>
                           </div>
                         </div>
@@ -595,6 +583,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="justify-center">
+        @if ($videos->count() > 4)
+        <a class="btn btn-outline-info" href="{{ route('videos') }}">More Videos...</a>
+        @endif
       </div>
     </div>
 </div>
