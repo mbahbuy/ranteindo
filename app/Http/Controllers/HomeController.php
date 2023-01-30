@@ -109,7 +109,11 @@ class HomeController extends Controller
     
     public function download(Post $post)
     {
-        return response()->download("assets/" . $post->files);
+        if (is_file("assets/" . $post->files)) {
+            return response()->download("assets/" . $post->files);
+        } else {
+            abort(404);
+        }
     }
 
 }

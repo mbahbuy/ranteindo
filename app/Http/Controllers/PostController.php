@@ -31,7 +31,7 @@ class PostController extends Controller
         {
             $img = $request->file('image');
             $nameimg = Str::random() . '.' . $img->getClientOriginalExtension();
-            $img->move('assets/pordfolio-img', $nameimg);
+            $img->move('assets/portfolio-img', $nameimg);
         } else {
             $nameimg = '';
         }
@@ -40,7 +40,7 @@ class PostController extends Controller
         {
             $doc = $request->file('files');
             $namedoc = $doc->getClientOriginalName();
-            $doc->move('assets/pordfolio-file', $namedoc);
+            $doc->move('assets/portfolio-file', $namedoc);
         } else {
             $namedoc = '';
         }
@@ -50,8 +50,8 @@ class PostController extends Controller
         $data->children_id = 1;
         $data->title = $request->title;
         $data->slug = $request->slug;
-        $data->image = "pordfolio-img/" . $nameimg;
-        $data->files = "pordfolio-file/" . $namedoc;
+        $data->image = "portfolio-img/" . $nameimg;
+        $data->files = "portfolio-file/" . $namedoc;
         $data->body = $request->body;
         $data->excerpt = Str::limit(strip_tags($request->body), 50);
         $data->href = $request->href;
