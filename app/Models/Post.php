@@ -10,15 +10,15 @@ class Post extends Model
 {
     use HasFactory, Sluggable;
     protected $guarded = ['id'];
-    protected $with = ['parent', 'children'];
+    // protected $with = ['parent', 'children'];
 
-    public function parent(){
-        return $this->belongsTo(self::class, 'parent_id');
-    }
+    // public function parent(){
+    //     return $this->belongsTo(self::class, 'parent_id');
+    // }
     
-    public function children(){
-        return $this->hasMany(self::class, 'children_id');
-    }
+    // public function children(){
+    //     return $this->hasMany(self::class, 'children_id');
+    // }
 
     public function getRouteKeyName()
     {

@@ -30,6 +30,9 @@
 
               <div class="col-md-3">
                 <button type="button" class="btn btn-outline-info" onclick="history.back()">Kembali</button>
+                @if ($post->files != null || $post->files != '')              
+                  <a href="{{ route('download', $post->slug) }}" class="btn btn-outline-danger"> Download file </a>
+                @endif
               </div>
 
             </div>

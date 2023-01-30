@@ -89,26 +89,23 @@
   <script src="{{ asset('js') }}/owl-carousel.js"></script>
   <script src="{{ asset('js') }}/animation.js"></script>
   <script src="{{ asset('js') }}/imagesloaded.js"></script>
-  <script src="{{ asset('js') }}/custom.js"></script>
 
-  <script>
-  // Acc
-    $(document).on("click", ".naccs .menu div", function() {
-      var numberIndex = $(this).index();
+  @if (Route::is('home') )
+    <script src="{{ asset('js') }}/custom.js"></script>
+  @else
+    <script>
+      (function ($) {
 
-      if (!$(this).is("active")) {
-          $(".naccs .menu div").removeClass("active");
-          $(".naccs ul li").removeClass("active");
+        "use strict";
 
-          $(this).addClass("active");
-          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+        // Page loading animation
+        $(window).on('load', function() {
+          $('#js-preloader').addClass('loaded');
+        });
 
-          var listItemHeight = $(".naccs ul")
-            .find("li:eq(" + numberIndex + ")")
-            .innerHeight();
-          $(".naccs ul").height(listItemHeight + "px");
-        }
-    });
-  </script>
+      })(window.jQuery);
+    </script>
+  @endif
+
 </body>
 </html>

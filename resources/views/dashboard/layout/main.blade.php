@@ -272,15 +272,12 @@
       })(window.jQuery);
     </script>
   @endif
-  
-  <!-- plugin for charts  -->
-  <script src="{{ asset('js') }}/chartjs.min.js" async></script>
   <!-- plugin for scrollbar  -->
   <script src="{{ asset('js') }}/perfect-scrollbar.min.js" async></script>
   <!-- github button -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- main script file  -->
-  {{-- <script src="{{ asset('js') }}/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script> --}}
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
   <script>
 
     var sidenav_target = "{{ Request::path() }}";
@@ -315,11 +312,6 @@
       loadJS("{{ asset('js') }}/navbar-sticky.js", true);
     }
 
-    if (document.querySelector("canvas")) {
-      loadJS("{{ asset('js') }}/chart-1.js", true);
-      loadJS("{{ asset('js') }}/chart-2.js", true);
-    }
-
     function loadJS(FILE_URL, async) {
       let dynamicScript = document.createElement("script");
 
@@ -340,4 +332,5 @@
       document.head.appendChild(dynamicStylesheet);
     }
   </script>
+
 </html>

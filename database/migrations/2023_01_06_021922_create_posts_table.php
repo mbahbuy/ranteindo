@@ -20,10 +20,10 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
+            $table->string('files')->nullable();
             $table->text('excerpt');
             $table->text('body');
             $table->text('href')->nullable();
-            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

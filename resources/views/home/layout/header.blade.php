@@ -17,7 +17,7 @@
                       <li class="scroll-to-section"><a href="{{ route('home') }}#services">Services</a></li>
                       <li class="scroll-to-section"><a href="{{ route('home') }}#about">About</a></li>
                       <li class="scroll-to-section"><a href="#portfolio" class="active">Portfolio</a></li>
-                      <li class="scroll-to-section"><a href="{{ route('home') }}#project">Project</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#produk">Produk</a></li>
                       <li class="scroll-to-section"><a href="#video">Videos</a></li> 
                       <li class="scroll-to-section"><div class="main-red-button-hover"><a href="{{ route('home') }}#contact">Contact Us Now</a></div></li>                       
                       @break
@@ -26,7 +26,7 @@
                       <li class="scroll-to-section"><a href="{{ route('home') }}#services">Services</a></li>
                       <li class="scroll-to-section"><a href="{{ route('home') }}#about">About</a></li>
                       <li class="scroll-to-section"><a href="{{ route('home') }}#portfolio">Portfolio</a></li>
-                      <li class="scroll-to-section"><a href="#project" class="active">Project</a></li>
+                      <li class="scroll-to-section"><a href="#produk" class="active">Produk</a></li>
                       <li class="scroll-to-section"><a href="{{ route('home') }}#video">Videos</a></li>
                       <li class="scroll-to-section"><div class="main-red-button-hover"><a href="{{ route('home') }}#contact">Contact Us Now</a></div></li>                     
                       @break
@@ -35,7 +35,7 @@
                       <li class="scroll-to-section"><a href="{{ route('home') }}#services">Services</a></li>
                       <li class="scroll-to-section"><a href="{{ route('home') }}#about">About</a></li>
                       <li class="scroll-to-section"><a href="{{ route('home') }}#portfolio">Portfolio</a></li>
-                      <li class="scroll-to-section"><a href="{{ route('home') }}#project">Project</a></li>
+                      <li class="scroll-to-section"><a href="{{ route('home') }}#produk">Produk</a></li>
                       <li class="scroll-to-section"><a href="#video" class="active">Videos</a></li>
                       <li class="scroll-to-section"><div class="main-red-button-hover"><a href="{{ route('home') }}#contact">Contact Us Now</a></div></li>                     
                       @break
@@ -44,7 +44,7 @@
                     <li class="scroll-to-section"><a href="#services">Services</a></li>
                     <li class="scroll-to-section"><a href="#about">About</a></li>
                     <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
-                    <li class="scroll-to-section"><a href="#project">Project</a></li>
+                    <li class="scroll-to-section"><a href="#produk">Produk</a></li>
                     <li class="scroll-to-section"><a href="#video">Videos</a></li>
                     <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
               @endswitch

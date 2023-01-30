@@ -16,10 +16,7 @@
                         <p>{{ $item->body }}</p>
                         <div class="down-buttons">
                           <div class="main-blue-button-hover">
-                            <a href="#{{ $item->href }}">Tunjukan</a>
-                          </div>
-                          <div class="call-button">
-                            <a href="#"><i class="fa fa-phone"></i> 010-020-0340</a>
+                            <a href="#{{ $item->href }}">Tunjukan {{ $item->href }}</a>
                           </div>
                         </div>
                       </div>
@@ -351,7 +348,7 @@
   </div>
 </div>
 
-<div id="project" class="pricing-tables">
+<div id="produk" class="pricing-tables">
   <div class="tables-left-dec">
     <img src="{{ asset('assets/img') }}/tables-left-dec.png" alt="">
   </div>

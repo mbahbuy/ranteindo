@@ -98,21 +98,25 @@
                                 @csrf
                                 <div class="flex-auto px-1 pt-6">
                                     <div class="mb-6">
-                                        <input  type="text" placeholder="Title ..." id="title" name="title" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
-                                        <input type="hidden" id="slug" name="slug" value="{{ old('slug') }}">
+                                        <input  type="text" placeholder="Title ..." id="title" name="title" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" value="{{ old('title') }}">
                                         @error('title')
+                                        <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                                            <strong class="font-medium">{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-6">
+                                        <input type="text" placeholder="Slug" id="slug" name="slug" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" value="{{ old('slug') }}">
+                                        <span>SLug(parameter URL) akan terisi otomatis</span>
+                                        @error('slug')
                                             <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
                                                 <strong class="font-medium">{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                        @error('slug')
-                                        <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
-                                            <strong class="font-medium">{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                     </div>
                                     <div class="mb-6">
-                                        <input  type="text" placeholder="Link Youtube ..." name="href" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
+                                        <img src="" class="max-w-full shadow-soft-2xl rounded-2xl yt-img-preview" />
+                                        <input  type="text" placeholder="Link Youtube ..." id="yt-img" name="href" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
                                         <span>link YouTube id: EZUPEoj3Qjs (Tidak harus)</span>
                                         @error('href')
                                             <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
@@ -125,6 +129,16 @@
                                         <input  type="file" placeholder="Gambar ..." id="image" name="image" onchange="previewImage()" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
                                         <span>Gambar : 365x500 pixel</span>
                                         @error('image')
+                                            <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
+                                                <strong class="font-medium">{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-6">
+                                        <canvas id="pdfViewer" height="0"></canvas>
+                                        <input  type="file" placeholder="Gambar ..." id="files" name="files" onchange="previewPDF()" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
+                                        <span>PDF : max 2MB (Jika ada)</span>
+                                        @error('files')
                                             <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
                                                 <strong class="font-medium">{{ $message }}</strong>
                                             </span>
@@ -163,20 +177,77 @@ title.addEventListener('change', function(){
     .then(data => slug.value = data.slug);
 });
 
-    function previewImage()
+$('#yt-img').on("keyup change", function() {
+    $('.yt-img-preview').prop("src","https://img.youtube.com/vi/" + this.value + "/0.jpg");
+} );
+
+function previewImage()
+{
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+    
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+    
+    oFReader.onload = function(oFREvent)
     {
-        const image = document.querySelector('#image');
-        const imgPreview = document.querySelector('.img-preview');
-        
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.files[0]);
-        
-        oFReader.onload = function(oFREvent)
-        {
-            imgPreview.src = oFREvent.target.result;
+        imgPreview.src = oFREvent.target.result;
+    }
+    
+};
+
+function previewPDF()
+{
+    const files = document.querySelector('#files').files[0];
+    var filesize = ((files.size/1024)/1024).toFixed(2); // MB
+    if (filesize <= 2) {
+        if(files.type == "application/pdf"){
+            var fileReader = new FileReader();  
+            fileReader.onload = function() {
+                var pdfData = new Uint8Array(this.result);
+                // Using DocumentInitParameters object to load binary data.
+                var loadingTask = pdfjsLib.getDocument({data: pdfData});
+                loadingTask.promise.then(function(pdf) {
+                  
+                  // Fetch the first page
+                  var pageNumber = 1;
+                  pdf.getPage(pageNumber).then(function(page) {                    
+                    var scale = 1.5;
+                    var viewport = page.getViewport({scale: scale});
+    
+                    // Prepare canvas using PDF page dimensions
+                    var canvas = $("#pdfViewer")[0];
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+    
+                    // Render PDF page into canvas context
+                    var renderContext = {
+                      canvasContext: context,
+                      viewport: viewport
+                    };
+                    var renderTask = page.render(renderContext);
+                    renderTask.promise;
+                  });
+                }, function (reason) {
+                  // PDF loading error
+                  console.error(reason);
+                });
+            };
+            fileReader.readAsArrayBuffer(files);
         }
         
-    };
+    } else {
+        var canvas = $("#pdfViewer")[0];
+        var context = canvas.getContext('2d');
+        canvas.height = 100;
+        canvas.width = 500;
+        context.font = "30px Arial";
+        context.fillText("Data PDF Melebihi 2MB", 10, 50);
+        $("#files").val('');
+    }
+
+}
 
 document.addEventListener('trix-file-accept', function(e)
 {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\{Post};
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\{Storage,File};
 use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -18,22 +18,44 @@ class PostController extends Controller
 
     public function PortfolioPost(Request $request)
     {
-        $validatedData = $request->validate([
+        $this->validate($request , [
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
-            'image' => 'image|file|max:2048',
+            'image' => 'required|mimes:jpg,jpeg,png|max:2048',
+            "files" => "mimes:pdf|max:2048",
             'body' => 'required',
             'href' => 'nullable'
         ]);
-        $validatedData['parent_id'] = 1;
-        $validatedData['children_id'] = 1;
+
         if($request->file('image'))
         {
-            $validatedData['image'] = $request->file('image')->store('posts-portfolio');
-        };
+            $img = $request->file('image');
+            $nameimg = Str::random() . '.' . $img->getClientOriginalExtension();
+            $img->move('assets/pordfolio-img', $nameimg);
+        } else {
+            $nameimg = '';
+        }
 
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 100);
-        Post::create($validatedData);
+        if($request->file('files'))
+        {
+            $doc = $request->file('files');
+            $namedoc = $doc->getClientOriginalName();
+            $doc->move('assets/pordfolio-file', $namedoc);
+        } else {
+            $namedoc = '';
+        }
+
+        $data = new Post();
+        $data->parent_id = 1;
+        $data->children_id = 1;
+        $data->title = $request->title;
+        $data->slug = $request->slug;
+        $data->image = "pordfolio-img/" . $nameimg;
+        $data->files = "pordfolio-file/" . $namedoc;
+        $data->body = $request->body;
+        $data->excerpt = Str::limit(strip_tags($request->body), 50);
+        $data->href = $request->href;
+        $data->save();
 
         return back()->with('success', 'Portfolio post telah ditambahkan');
     }
@@ -49,24 +71,46 @@ class PostController extends Controller
 
     public function ProjectPost(Request $request)
     {
-        $validatedData = $request->validate([
+        $this->validate($request , [
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
-            'image' => 'image|file|max:2048',
+            'image' => 'required|mimes:jpg,jpeg,png|max:2048',
+            "files" => "mimes:pdf|max:2048",
             'body' => 'required',
             'href' => 'nullable'
         ]);
-        $validatedData['parent_id'] = 2;
-        $validatedData['children_id'] = 1;
+
         if($request->file('image'))
         {
-            $validatedData['image'] = $request->file('image')->store('posts-project');
-        };
+            $img = $request->file('image');
+            $nameimg = Str::random() . '.' . $img->getClientOriginalExtension();
+            $img->move('assets/project-img', $nameimg);
+        } else {
+            $nameimg = '';
+        }
 
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 100);
-        Post::create($validatedData);
+        if($request->file('files'))
+        {
+            $doc = $request->file('files');
+            $namedoc = $doc->getClientOriginalName();
+            $doc->move('assets/project-file', $namedoc);
+        } else {
+            $namedoc = '';
+        }
 
-        return back()->with('success', 'Portfolio post telah ditambahkan');
+        $data = new Post();
+        $data->parent_id = 2;
+        $data->children_id = 1;
+        $data->title = $request->title;
+        $data->slug = $request->slug;
+        $data->image = "project-img/" . $nameimg;
+        $data->files = "project-file/" . $namedoc;
+        $data->body = $request->body;
+        $data->excerpt = Str::limit(strip_tags($request->body), 50);
+        $data->href = $request->href;
+        $data->save();
+
+        return back()->with('success', 'Produk post telah ditambahkan');
     }
 
     public function ProjectPostDlt(Request $request, Post $post)

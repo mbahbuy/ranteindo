@@ -106,4 +106,10 @@ class HomeController extends Controller
         ]);
     }
 
+    
+    public function download(Post $post)
+    {
+        return response()->download("assets/" . $post->files);
+    }
+
 }

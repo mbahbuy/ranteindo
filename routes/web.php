@@ -10,6 +10,7 @@ Route::get('/portfolio', ['as' => 'portfolio', 'uses' => 'HomeController@Portfol
 Route::get('/portfolio/{post:slug}', ['as' => 'portfolio.show', 'uses' => 'HomeController@PortfolioPost']);
 Route::get('/portfoliocontoh', ['as' => 'portfolio.contoh', 'uses' => 'HomeController@PortfolioContoh']);
 Route::get('/videos', ['as' => 'videos', 'uses' => 'HomeController@Videos']);
+Route::get('/download/{post:slug}', ['as' => 'download', 'uses' => "HomeController@download"]);
 
 
 Route::post('/contactus', ['as' => 'contact.us', 'uses' => 'ContactController@store']);

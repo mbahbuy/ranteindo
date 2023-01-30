@@ -84,7 +84,8 @@
                                         @enderror
                                     </div>
                                     <div class="mb-6">
-                                        <input  type="text" placeholder="Link Youtube ..." name="href" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
+                                        <img src="" class="max-w-full shadow-soft-2xl rounded-2xl yt-img-preview" />
+                                        <input  type="text" placeholder="Link Youtube ..." id="yt-img" name="href" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
                                         <span>link YouTube id: EZUPEoj3Qjs</span>
                                         @error('href')
                                             <span class="mt-2 text-sm text-red-600 dark:text-red-500" role="alert">
@@ -106,20 +107,9 @@
 </div>
 
 <script>
-    function previewImage()
-    {
-        const image = document.querySelector('#image');
-        const imgPreview = document.querySelector('.img-preview');
-        
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.files[0]);
-        
-        oFReader.onload = function(oFREvent)
-        {
-            imgPreview.src = oFREvent.target.result;
-        }
-        
-    };
+    $('#yt-img').on("keyup change", function() {
+        $('.yt-img-preview').prop("src","https://img.youtube.com/vi/" + this.value + "/0.jpg");
+    } );
 </script>
 
 @endsection
