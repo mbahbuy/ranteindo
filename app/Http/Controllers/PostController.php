@@ -63,8 +63,11 @@ class PostController extends Controller
     public function PortfolioPostDlt(Request $request, Post $post)
     {
         if($post->image){
-            Storage::delete($post->image);
+            Storage::delete("assets/" . $post->image);
         };
+        if($post->files){
+            Storage::delete("assets/" . $post->files);
+        }
         $post->delete();
         return back()->with('success', 'Portfolio post telah dihapus');
     }
@@ -116,8 +119,11 @@ class PostController extends Controller
     public function ProjectPostDlt(Request $request, Post $post)
     {
         if($post->image){
-            Storage::delete($post->image);
+            Storage::delete("assets/" . $post->image);
         };
+        if($post->files){
+            Storage::delete("assets/" . $post->files);
+        }
         $post->delete();
         return back()->with('success', 'Portfolio post telah dihapus');
     }

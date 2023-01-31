@@ -196,7 +196,7 @@ class ViewsController extends Controller
     public function Project()
     {
         return view('dashboard.views.project', [
-            'title' => 'Dashboard - Portfolio',
+            'title' => 'Dashboard - Produk',
             'projecttitle' => Views::ProjectTitle(),
             'items' => Post::ProjectPosts()
         ]);
@@ -215,7 +215,7 @@ class ViewsController extends Controller
             Views::create($validatedData);
         };
 
-        return back()->with('success', 'Project Title Berasil diperbarui!');
+        return back()->with('success', 'Produk Title Berasil diperbarui!');
     }
 
     public function Videos()

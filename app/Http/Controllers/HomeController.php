@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function Project()
     {
         return view('home.project', [
-            'title' => 'Project',
+            'title' => 'Produk',
             'switch' => '',
             'project' => Post::ProjectPosts(),
             'services' => Item::ServicesItem(),
