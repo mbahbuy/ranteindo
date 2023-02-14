@@ -69,10 +69,10 @@ class Views extends Model
             if($img->image !== '' || $img->image !== null){
                 return $img->image;
             } else {
-                return 'img/about-left-image.png';
+                return 'img/ivancik.jpg';
             }
         } else {
-            return 'img/about-left-image.png';
+            return 'img/ivancik.jpg';
         }
     }
 

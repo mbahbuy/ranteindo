@@ -169,7 +169,7 @@
       <div class="row">
         <div class="col-lg-6 align-self-center">
           <div class="left-image">
-            <img src="{{ asset('assets') . '/' . App\Models\Views::AboutImg() }}" class="img-fluid">
+            <img src="{{ asset('assets/img/about-bg.png') }}" class="img-fluid about-image-left">
           </div>
         </div>
         <div class="col-lg-6">

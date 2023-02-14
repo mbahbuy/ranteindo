@@ -19,7 +19,21 @@
         background-image: url(./assets/img/baner-dec-left.png);
       }
       .main-banner:before {
-        background-image: url(./assets/{{ App\Models\Views::TopImg() }});
+        content: '';
+        background-image: url(./assets/img/backg123.png), url(./assets/{{ App\Models\Views::TopImg() }});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top right;
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 819px;
+        height: 674px;
+      }
+      .about-image-left {
+        background-image: url(./assets/{{ \App\Models\Views::AboutImg() }});
+        background-repeat: no-repeat;
+        background-size: cover;
       }
       .our-portfolio .item .hover-effect {
         background-image: url(./assets/img/hover-bg.png);
