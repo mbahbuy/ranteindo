@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css') }}/fontawesome.css">
     <link rel="stylesheet" href="{{ asset('css') }}/animated.css">
     <link rel="stylesheet" href="{{ asset('css') }}/owl.css">
-    <link rel="stylesheet" href="{{ asset('css') }}/templatemo-onix-digital.css">
+    <link rel="stylesheet" href="{{ asset('css') }}/templatemo-onix-digital.css?version=={{ date('Ymd') }}">
     <style>
       .main-banner:after {
         background-image: url(./assets/img/baner-dec-left.png);

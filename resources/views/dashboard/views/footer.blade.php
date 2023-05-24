@@ -25,12 +25,12 @@
             </div>
             <div class="flex-auto px-0 pt-0 pb-2">
                 <div class="p-0 overflow-x-auto">
-                    <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
+                    <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500 p-4">
                         @if ($footer->count())
                             @foreach ($footer as $item)                                    
                                 <tr>
                                     <td>
-                                        {{ $item->image }}
+                                        <i class="fa {{ $item->image }}"></i>
                                     </td>
                                     <td>
                                         {{ $item->href }}
@@ -53,7 +53,7 @@
                 </div>
               </div>
             <div class="p-4 pb-0 mb-0 bg-white item-center rounded-t-2xl">
-                <p class="leading-normal text-sm justify-center text-center">Form penambahan sambutan</p>
+                <p class="leading-normal text-sm justify-center text-center">Form penambahan footer</p>
             </div>
             <div class="flex-auto p-4">
                 <div class="flex justify-center mx-3">

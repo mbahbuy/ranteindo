@@ -238,7 +238,9 @@
                 @foreach ($portfolio->take(6) as $item)
                   <div class="item">
                     <div class="thumb">
-                      <img src="{{ asset('assets') . '/' . $item->image }}" alt="">
+                      <div class="same-img-size">
+                        <img class="foto-responsive" src="{{ asset('assets') . '/' . $item->image }}" alt="">
+                      </div>
                       <div class="hover-effect">
                         <div class="inner-content">
                           <h4>{{ $item->title }}</h4>
@@ -369,7 +371,9 @@
           @if ($project->count())
               @foreach ($project as $item)
               <div class="card">
-                <img src="{{ asset('assets') . '/' . $item->image }}" class="card-img-top" alt="...">
+                <div class="card-img-top same-img-size">
+                  <img src="{{ asset('assets') . '/' . $item->image }}" class="foto-responsive rounded" alt="...">
+                </div>
                 <div class="card-body">
                   <h5 class="card-title">{{ $item->title }}</h5>
                   <div class="main-blue-button-hover">
@@ -591,7 +595,64 @@
     </div>
 </div>
 
-<div id="contact" class="contact-us section">
+<div id="contact">
+  @if (  App\Models\Views::ManagerStatus()  == 1)      
+    <div class="pricing-tables">
+      <div class="tables-left-dec">
+        <img src="{{ asset('assets/img') }}/tables-left-dec.png" alt="">
+      </div>
+      <div class="tables-right-dec">
+        <img src="{{ asset('assets/img') }}/tables-right-dec.png" alt="">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <div class="section-heading">
+              <h2>{{ App\Models\Views::ManagerTitle() }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          @if ($manager->count())
+            @foreach ($manager as $item)                
+              <div class="col-lg-4">
+                <div class="item">
+                  <div class="size-image">
+                    <img class="img-thumbnail foto-responsive" src="{{ asset('assets') . '/' . $item->image }}" alt="foto manager">
+                  </div>
+                  <h4>{{ $item->title }}</h4>
+                  <p class="fw-lighter fst-italic">{{ $item->body }}</p>
+                </div>
+              </div>
+            @endforeach
+          @else   
+            <div class="col-lg-4">
+              <div class="item">
+                <img class="img-fluid img-thumbnail" src="{{ asset('assets/img/200x200.jpg') }}" alt="foto manager">
+                <h4>Nama Manager</h4>
+                <p class="fw-lighter fst-italic">Jabatan Manager</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="item">
+                <img class="img-fluid img-thumbnail" src="{{ asset('assets/img/200x200.jpg') }}" alt="foto manager">
+                <h4>Nama Manager</h4>
+                <p class="fw-lighter fst-italic">Jabatan Manager</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="item">
+                <img class="img-fluid img-thumbnail" src="{{ asset('assets/img/200x200.jpg') }}" alt="foto manager">
+                <h4>Nama Manager</h4>
+                <p class="fw-lighter fst-italic">Jabatan Manager</p>
+              </div>
+            </div>
+          @endif
+        </div>
+      </div>
+    </div>
+  @endif
+  <div class="contact-us section">
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
@@ -668,6 +729,7 @@
     <div class="contact-left-dec">
       <img src="{{ asset('assets') }}/img/contact-left-dec.png" alt="">
     </div>
+  </div>
 </div>
 
 <div class="footer-dec">

@@ -35,12 +35,12 @@
                                         <img src="https://img.youtube.com/vi/{{ $item->href }}/0.jpg" alt="img-blur-shadow" class="max-w-full shadow-soft-2xl rounded-2xl" />
                                     </a>
                                 </div>
-                                <div class="flex-auto px-1 pt-6">
+                                <div class="flex-auto px-1 pt-6 text-center">
                                     <p class="relative z-10 mb-2 leading-normal text-transparent bg-gradient-to-tl from-gray-900 to-slate-800 text-sm bg-clip-text">Link : {{ $item->href }}</p>
                                     <h5>{{ $item->title }}</h5>
                                     <p class="mb-6 leading-normal text-sm">{{ $item->body }}</p>
                                     <div class="flex items-center justify-between">
-                                        <form action="{{ route('views.videos.item.delete', $item->id) }}" method="post">
+                                        <form style="margin: auto" action="{{ route('views.videos.item.delete', $item->id) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" onclick="confirm('Anda berkenan menghapus item ini?')" class="inline-block px-8 py-2 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs tracking-tight-soft border-fuchsia-500 text-fuchsia-500 hover:border-fuchsia-500 hover:bg-transparent hover:text-fuchsia-500 hover:opacity-75 hover:shadow-none active:bg-fuchsia-500 active:text-white active:hover:bg-transparent active:hover:text-fuchsia-500">Hapus</button>

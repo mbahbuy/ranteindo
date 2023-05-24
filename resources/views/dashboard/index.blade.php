@@ -241,7 +241,9 @@
               @foreach ($portfolio->take(6) as $item)
                 <div class="item">
                   <div class="thumb">
-                    <img src="{{ asset('assets') . '/' . $item->image }}" alt="">
+                    <div class="sizeofimg">
+                      <img class="img-responsive rounded" src="{{ asset('assets') . '/' . $item->image }}" alt="">
+                    </div>
                     <div class="hover-effect">
                       <div class="inner-content">
                         <h4>{{ $item->title }}</h4>
@@ -345,78 +347,80 @@
 </div>
 
 <div id="project" class="pricing-tables">
-<div class="tables-left-dec">
-  <img src="{{ asset('assets/img') }}/tables-left-dec.png" alt="">
-</div>
-<div class="tables-right-dec">
-  <img src="{{ asset('assets/img') }}/tables-right-dec.png" alt="">
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6 offset-lg-3">
-      <div class="section-heading">
-        <h2>{{ App\Models\Views::ProjectTitle() }}</h2>
+  <div class="tables-left-dec">
+    <img src="{{ asset('assets/img') }}/tables-left-dec.png" alt="">
+  </div>
+  <div class="tables-right-dec">
+    <img src="{{ asset('assets/img') }}/tables-right-dec.png" alt="">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="section-heading">
+          <h2>{{ App\Models\Views::ProjectTitle() }}</h2>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="owl-carousel owl-project">
-        @if ($project->count())
-            @foreach ($project as $item)
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="owl-carousel owl-project">
+          @if ($project->count())
+              @foreach ($project as $item)
+              <div class="card">
+                <div class="card-img-top sizeofimg">
+                  <img src="{{ asset('assets') . '/' . $item->image }}" class="img-responsive rounded" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ $item->title }}</h5>
+                  <p class="card-text">{{ $item->excerpt }}</p>
+                  <div class="main-blue-button-hover">
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+          @else              
             <div class="card">
-              <img src="{{ asset('assets') . '/' . $item->image }}" class="card-img-top" alt="...">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">{{ $item->title }}</h5>
-                <p class="card-text">{{ $item->excerpt }}</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div class="main-blue-button-hover">
                   <a href="#">Read more...</a>
                 </div>
               </div>
             </div>
-            @endforeach
-        @else              
-          <div class="card">
-            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <div class="main-blue-button-hover">
-                <a href="#">Read more...</a>
+            <div class="card">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Read more...</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <div class="main-blue-button-hover">
-                <a href="#">Read more...</a>
+            <div class="card">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Read more...</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <div class="main-blue-button-hover">
-                <a href="#">Read more...</a>
+            <div class="card">
+              <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="main-blue-button-hover">
+                  <a href="#">Read more...</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="{{ asset('assets') }}/img/contoh.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <div class="main-blue-button-hover">
-                <a href="#">Read more...</a>
-              </div>
-            </div>
-          </div>
-        @endif
+          @endif
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <div id="video" class="our-videos section">
@@ -581,6 +585,63 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="manager" class="pricing-tables section">
+  <div class="pricing-tables">
+    <div class="tables-left-dec">
+      <img src="{{ asset('assets/img') }}/tables-left-dec.png" alt="">
+    </div>
+    <div class="tables-right-dec">
+      <img src="{{ asset('assets/img') }}/tables-right-dec.png" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h2>{{ App\Models\Views::ManagerTitle() }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        @if ($manager->count())
+          @foreach ($manager as $item)                
+            <div class="col-lg-4">
+              <div class="item">
+                <div class="sizeofimg">
+                  <img class="img-thumbnail img-responsive" src="{{ asset('assets') . '/' . $item->image }}" alt="foto manager">
+                </div>
+                <h4>{{ $item->title }}</h4>
+                <p class="fw-lighter fst-italic">{{ $item->body }}</p>
+              </div>
+            </div>
+          @endforeach
+        @else   
+          <div class="col-lg-4">
+            <div class="item">
+              <img class="img-fluid img-thumbnail" src="{{ asset('assets/img/200x200.jpg') }}" alt="foto manager">
+              <h4>Nama Manager</h4>
+              <p class="fw-lighter fst-italic">Jabatan Manager</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="item">
+              <img class="img-fluid img-thumbnail" src="{{ asset('assets/img/200x200.jpg') }}" alt="foto manager">
+              <h4>Nama Manager</h4>
+              <p class="fw-lighter fst-italic">Jabatan Manager</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="item">
+              <img class="img-fluid img-thumbnail" src="{{ asset('assets/img/200x200.jpg') }}" alt="foto manager">
+              <h4>Nama Manager</h4>
+              <p class="fw-lighter fst-italic">Jabatan Manager</p>
+            </div>
+          </div>
+        @endif
       </div>
     </div>
   </div>

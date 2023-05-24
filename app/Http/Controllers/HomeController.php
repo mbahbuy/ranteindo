@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Views,Item, Post};
+use App\Models\{Views, Item, Post};
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +20,7 @@ class HomeController extends Controller
             'portfolio' => Post::PortfolioPosts(),
             'project' => Post::ProjectPosts(),
             'videos' => Item::VideosItem(),
+            'manager' => Item::ManagerItem(),
             'contactemail' => Item::ContactInfoEmail(),
             'contacttlp' => Item::ContactInfoTlp(),
             'footer' => Item::Footer()
@@ -106,7 +107,7 @@ class HomeController extends Controller
         ]);
     }
 
-    
+
     public function download(Post $post)
     {
         if (is_file("assets/" . $post->files)) {
@@ -115,5 +116,4 @@ class HomeController extends Controller
             abort(404);
         }
     }
-
 }

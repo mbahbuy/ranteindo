@@ -22,15 +22,15 @@ Auth::routes([
     'verify' => false, // Email Verification Routes...
 ]);
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
     Route::post('/dashboard/password', ['as' => 'changepassword', 'uses' => 'UserController@Password']);
-    
+
     // LOGO
     Route::get('/dashboard/logo', ['as' => 'views.logo', 'uses' => 'ViewsController@Logo']);
     Route::post('/dashboard/logo', ['as' => 'views.logo.update', 'uses' => 'ViewsController@LogoUpdate']);
-   
+
     // TOP
     Route::get('/dashboard/home', ['as' => 'views.top', 'uses' => 'ViewsController@Top']);
     Route::post('/dashboard/home/img', ['as' => 'views.top.img', 'uses' => 'ViewsController@TopImage']);
@@ -66,6 +66,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/dashboard/videos/item', ['as' => 'views.videos.item', 'uses' => 'ItemController@VideosItem']);
     Route::delete('/dashboard/videos/item/{item}', ['as' => 'views.videos.item.delete', 'uses' => 'ItemController@VideosItemDlt']);
 
+    // Manager
+    Route::get('/dashboard/manager', ['as' => 'views.manager', 'uses' => 'ViewsController@Manager']);
+    Route::post('/dashboard/manager/title', ['as' => 'views.manager.title', 'uses' => 'ViewsController@ManagerTitle']);
+    Route::post('/dashboard/manager/visibility', ['as' => 'views.manager.visibility', 'uses' => 'ViewsController@ManagerVisibility']);
+    Route::post('/dashboard/manager/item', ['as' => 'views.manager.item', 'uses' => 'ItemController@ManagerItem']);
+    Route::delete('/dashboard/manager/item/{item}', ['as' => 'views.manager.item.delete', 'uses' => 'ItemController@ManagerItemDlt']);
+
     // Contact Us
     Route::get('/dashboard/contact', ['as' => 'views.contact', 'uses' => 'ViewsController@Contact']);
     Route::post('/dashboard/contact/title', ['as' => 'views.contact.title', 'uses' => 'ViewsController@ContactTitle']);
@@ -80,5 +87,4 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/dashboard/footer/item/{item}', ['as' => 'views.footer.item.delete', 'uses' => 'ItemController@FooterItemDlt']);
 
     Route::get('/checkSlug', ['as' => 'checkslug', 'uses' => 'PostController@Slug']);
-
 });

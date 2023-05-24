@@ -1200,6 +1200,8 @@ Portfolio
 .our-portfolio .item .thumb img {
   border-radius: 20px;
   transition: all .3s;
+  height: 500px;
+  object-fit: fill;
 }
 
 .owl-portfolio .owl-nav {
@@ -1904,6 +1906,32 @@ footer .copyright p a {
   color: #ff695f;
 }
 
+/* +++++++ */
+
+.first-item{
+  height: 745px !important;
+  width: 920px !important;
+  object-fit: contain;
+}
+
+.same-img-size{
+  height: 500px !important;
+  width: auto;
+  object-fit: contain;
+}
+
+.size-image{
+  height: 330px !important;
+  width: 255px !important;
+  margin: auto;
+}
+
+.foto-responsive{
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: contain;
+}
+
 /* 
 ---------------------------------------------
 responsive
@@ -1982,6 +2010,20 @@ responsive
   .subscribe-newsletters {
     margin-bottom: 0px;
   }
+  .our-portfolio .item .thumb img{
+    height: 460px;
+  }
+  .first-item{
+    height: 625px !important;
+    width: auto !important;
+  }
+  .same-img-size{
+    height: 460px !important;
+  }
+  .size-image{
+    height: 245px !important;
+    width: 175px !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2021,5 +2063,32 @@ responsive
   }
   .contact-us .info span {
     margin-bottom: 20px;
+  }
+  .our-portfolio .item .thumb img{
+    height: 360px;
+  }
+  .first-item{
+    height: 650px !important;
+    width: auto !important;
+  }
+  .same-img-size{
+    height: 360px !important;
+  }
+  .size-image{
+    height: 330px !important;
+    width: 255px !important;
+  }
+}
+@media(max-width:550px){
+  .first-item{
+    height: 360px !important;
+    width: auto !important;
+  }
+  .same-img-size{
+    height: 245px !important;
+  }
+  .size-image{
+    height: 245px !important;
+    width: 175px !important;
   }
 }

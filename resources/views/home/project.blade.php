@@ -7,7 +7,7 @@
           <!-- container -->
           <div class="container" style="padding-top: 150px">
 
-            <img class="img-fluid mb-4" src="{{ asset('assets') . '/' . $post->image }}">
+            <img class="first-item mb-4" src="{{ asset('assets') . '/' . $post->image }}">
 
 
             <!-- row -->
@@ -91,7 +91,7 @@
             <div class="col-md-12 ">
               @if ($project->count())
                 <div class="post">
-                  <img src="{{ asset('assets') . '/' . $project[0]->image }}" class="img-fluid">
+                  <img src="{{ asset('assets') . '/' . $project[0]->image }}" class="first-item">
                   <div class="overlay-post">
                       <h5 class="text-white">{{ $project[0]->title }}</h5>
                       <p class="text-white">{{ $project[0]->excerpt }}</p>
@@ -118,7 +118,9 @@
                   @foreach ($project->skip(1) as $item)
                     <div class="col-md-4 mb-4">
                       <div class="card" style="width: 18rem;">
-                          <img src="{{ asset('assets') . '/' . $item->image }}" class="card-img-top" alt="...">
+                          <div class="card-img-top same-img-size">
+                            <img src="{{ asset('assets') . '/' . $item->image }}" class="foto-responsive rounded" alt="...">
+                          </div>
                           <div class="card-body">
                             <h5 class="card-title">{{ $item->title }}</h5>
                             <p class="card-text">{{ $item->excerpt }}</p>

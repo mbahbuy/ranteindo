@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Views,Item,Post};
+use App\Models\{Views, Item, Post};
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -20,6 +20,7 @@ class DashboardController extends Controller
             'portfolio' => Post::PortfolioPosts(),
             'project' => Post::ProjectPosts(),
             'videos' => Item::VideosItem(),
+            'manager' => Item::ManagerItem(),
             'contactemail' => Item::ContactInfoEmail(),
             'contacttlp' => Item::ContactInfoTlp(),
             'footer' => Item::Footer()

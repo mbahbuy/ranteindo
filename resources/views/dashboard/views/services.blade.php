@@ -62,16 +62,16 @@
                             <div class="relative flex flex-col min-w-0 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
                                 <div class="relative">
                                     <a class="block shadow-xl rounded-2xl">
-                                        <img src="{{ asset('assets') . '/' . $item->image }}" alt="img-blur-shadow" class="max-w-full shadow-soft-2xl rounded-2xl" />
+                                        <img style="margin: auto" src="{{ asset('assets') . '/' . $item->image }}" alt="img-blur-shadow" class="max-w-full shadow-soft-2xl rounded-2xl" />
                                     </a>
                                 </div>
-                                <div class="flex-auto px-1 pt-6">
+                                <div class="flex-auto px-1 pt-6 text-center">
                                     <a href="#">
                                         <h5>{{ $item->title }}</h5>
                                     </a>
                                     <p class="mb-6 leading-normal text-sm">{{ $item->body }}</p>
                                     <div class="flex items-center justify-between">
-                                        <form action="{{ route('views.services.item.delete', $item->id) }}" method="post">
+                                        <form style="margin: auto" action="{{ route('views.services.item.delete', $item->id) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" onclick="confirm('Anda berkenan menghapus item ini?')" class="inline-block px-8 py-2 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs tracking-tight-soft border-fuchsia-500 text-fuchsia-500 hover:border-fuchsia-500 hover:bg-transparent hover:text-fuchsia-500 hover:opacity-75 hover:shadow-none active:bg-fuchsia-500 active:text-white active:hover:bg-transparent active:hover:text-fuchsia-500">Hapus</button>

@@ -44,6 +44,7 @@
             <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.portfolio') }}">Portfolio</a>
             <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.project') }}">Produk</a>
             <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.videos') }}">Videos</a>
+            <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.manager') }}">Manager</a>
             <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.contact') }}">Contact</a>
             <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.logo') }}">Logo</a>
             <a class="shadow-soft-2xl mr-2 h-8 w-full mb-2 justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5" href="{{ route('views.footer') }}">Footer</a>

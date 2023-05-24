@@ -93,6 +93,17 @@
       trix-toolbar [data-trix-button-group="file-tools"]{
         display: none;
       }
+      .img-responsive{
+          height: 100% !important;
+          width: 100% !important;
+          object-fit: contain !important;
+      }
+
+      .sizeofimg{
+          height: 245px !important;
+          width: 175px !important;
+          margin: auto;
+      }
     </style>
     <link href="{{ asset('css') }}/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
     <script src="{{ asset('js') }}/jquery.min.js"></script>
@@ -108,7 +119,7 @@
       <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all shadow-none duration-250 ease-soft-in rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="true">
         <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
           @if (!Request::is('dashboard'))
-            <button type="button" class="flex flex-column" onclick="history.back()">
+            <button type="button" class="flex flex-column" onclick="location.href=`{{ route('dashboard') }}`">
               <i class="fas fa-arrow-left ease-bounce text-sm group-hover:-translate-x-1.25 mr-1 leading-normal transition-all duration-200 px-4 py-2"></i>
               <h4 class="mb-0 font-bold capitalize">{{ Request::segment(count(request()->segments())) }}</h4>
             </button>
@@ -276,6 +287,9 @@
         });
         $('#video').click(function(){
           location.href = "{{ route('views.videos') }}";
+        });
+        $('#manager').click(function(){
+          location.href = "{{ route('views.manager') }}";
         });
         $('#contact').click(function(){
           location.href = "{{ route('views.contact') }}";

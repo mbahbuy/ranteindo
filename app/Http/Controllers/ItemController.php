@@ -61,8 +61,7 @@ class ItemController extends Controller
 
         $validatedData['parent_id'] = 4;
         $validatedData['children_id'] = 1;
-        if($request->file('image'))
-        {
+        if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('videos-img');
         };
         Item::create($validatedData);
@@ -72,11 +71,38 @@ class ItemController extends Controller
 
     public function VideosItemDlt(Request $request, Item $item)
     {
-        if($item->image){
+        if ($item->image) {
             Storage::delete($item->image);
         };
         $item->delete();
         return back()->with('success', 'Videos item telah dihapus');
+    }
+
+    public function ManagerItem(Request $request)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|min:5|max:255',
+            'body' => 'required|max:255',
+            'image' => 'image|file|max:2048',
+        ]);
+
+        $validatedData['parent_id'] = 5;
+        $validatedData['children_id'] = 1;
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('manager-img');
+        };
+        Item::create($validatedData);
+
+        return back()->with('success', 'Manager item telah ditambahkan');
+    }
+
+    public function ManagerItemDlt(Request $request, Item $item)
+    {
+        if ($item->image) {
+            Storage::delete($item->image);
+        };
+        $item->delete();
+        return back()->with('success', 'Manager item telah dihapus');
     }
 
     public function ContactInfoEmail(Request $request)
@@ -86,7 +112,7 @@ class ItemController extends Controller
         ]);
 
         $data['body'] = $validatedData['email'];
-        $data['parent_id'] = 5;
+        $data['parent_id'] = 6;
         $data['children_id'] = 1;
         Item::create($data);
 
@@ -100,7 +126,7 @@ class ItemController extends Controller
         ]);
 
         $data['body'] = $validatedData['nomor'];
-        $data['parent_id'] = 5;
+        $data['parent_id'] = 6;
         $data['children_id'] = 2;
         Item::create($data);
 
@@ -126,7 +152,7 @@ class ItemController extends Controller
             'image' => 'required|min:5|max:255'
         ]);
 
-        $validatedData['parent_id'] = 6;
+        $validatedData['parent_id'] = 7;
         $validatedData['children_id'] = 1;
         Item::create($validatedData);
 

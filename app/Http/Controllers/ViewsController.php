@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Views,Item, Post};
+use App\Models\{Views, Item, Post};
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\{Storage, Validator, Response};
 
 class ViewsController extends Controller
 {
@@ -24,7 +24,7 @@ class ViewsController extends Controller
 
         $validatedData['parent_id'] = 1;
         $validatedData['children_id'] = 1;
-        if($request->oldImage){
+        if ($request->oldImage) {
             Storage::delete($request->oldImage);
         };
         $validatedData['image'] = $request->file('image')->store('main');
@@ -52,7 +52,7 @@ class ViewsController extends Controller
 
         $validatedData['parent_id'] = 2;
         $validatedData['children_id'] = 1;
-        if($request->oldImage){
+        if ($request->oldImage) {
             Storage::delete($request->oldImage);
         };
         $validatedData['image'] = $request->file('image')->store('main');
@@ -90,7 +90,7 @@ class ViewsController extends Controller
 
         $validatedData['parent_id'] = 3;
         $validatedData['children_id'] = 1;
-        if($request->old_title !== $validatedData['title']){
+        if ($request->old_title !== $validatedData['title']) {
             Views::where('parent_id', $validatedData['parent_id'])->where('children_id', $validatedData['children_id'])->update(['active' => false]);
             Views::create($validatedData);
         };
@@ -117,7 +117,7 @@ class ViewsController extends Controller
 
         $validatedData['parent_id'] = 4;
         $validatedData['children_id'] = 1;
-        if($request->oldImage){
+        if ($request->oldImage) {
             Storage::delete($request->oldImage);
         };
         $validatedData['image'] = $request->file('image')->store('main');
@@ -134,7 +134,7 @@ class ViewsController extends Controller
             'title' => 'nullable',
             'body' => 'nullable'
         ]);
-        if($validatedData['title'] != null && $validatedData['body'] != null){
+        if ($validatedData['title'] != null && $validatedData['body'] != null) {
             $data['title'] = ($validatedData['title'] !== null || $validatedData['title'] !== '') ? $validatedData['title'] : Views::AboutTitle();
             $data['body'] = ($validatedData['body'] !== null || $validatedData['body'] !== '') ? $validatedData['body'] : Views::AboutBody();
             $data['parent_id'] = 4;
@@ -153,10 +153,10 @@ class ViewsController extends Controller
             'body' => 'required',
             'image' => 'required'
         ]);
-        
+
         $same = Views::AboutValue();
-        if($validatedData['title'] != $same['title'] && $validatedData['body'] != $same['body'] && $validatedData['image'] != $same['image']){
-            $data['title'] = ($validatedData['title'] != $same['title'] ) ? $validatedData['title'] : $same['title'];
+        if ($validatedData['title'] != $same['title'] && $validatedData['body'] != $same['body'] && $validatedData['image'] != $same['image']) {
+            $data['title'] = ($validatedData['title'] != $same['title']) ? $validatedData['title'] : $same['title'];
             $data['body'] = ($validatedData['body'] != $same['body']) ? $validatedData['body'] : $same['body'];
             $data['image'] = ($validatedData['image'] != $same['image']) ? $validatedData['image'] : $same['image'];
             $data['parent_id'] = 4;
@@ -185,7 +185,7 @@ class ViewsController extends Controller
 
         $validatedData['parent_id'] = 5;
         $validatedData['children_id'] = 1;
-        if($request->old_title !== $validatedData['title']){
+        if ($request->old_title !== $validatedData['title']) {
             Views::where('parent_id', $validatedData['parent_id'])->where('children_id', $validatedData['children_id'])->update(['active' => false]);
             Views::create($validatedData);
         };
@@ -210,7 +210,7 @@ class ViewsController extends Controller
 
         $validatedData['parent_id'] = 6;
         $validatedData['children_id'] = 1;
-        if($request->old_title !== $validatedData['title']){
+        if ($request->old_title !== $validatedData['title']) {
             Views::where('parent_id', $validatedData['parent_id'])->where('children_id', $validatedData['children_id'])->update(['active' => false]);
             Views::create($validatedData);
         };
@@ -224,6 +224,43 @@ class ViewsController extends Controller
             'title' => 'Dashboard - Videos',
             'items' => Item::VideosItem()
         ]);
+    }
+
+    public function Manager()
+    {
+        return view('dashboard.views.manager', [
+            'title' => 'Dashboard - Manager',
+            'managertitle' => Views::ManagerTitle(),
+            'items' => Item::ManagerItem()
+        ]);
+    }
+
+    public function ManagerVisibility(Request $request)
+    {
+        $validatedData = $request->validate([
+            'status' => 'required|numeric|in:1,0'
+        ]);
+        Views::where(['parent_id' => 7], ['children_id' => 1])->update(['active' => (int)$validatedData['status']]);
+        if ($validatedData['status'] == 0) {
+            return back()->with('success', 'Contact Manager disembunyikan!');
+        }
+        return back()->with('success', 'Contact Manager disematkan!');
+    }
+
+    public function ManagerTitle(Request $request)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required'
+        ]);
+
+        $validatedData['parent_id'] = 7;
+        $validatedData['children_id'] = 2;
+        if ($request->old_title !== $validatedData['title']) {
+            Views::where('parent_id', $validatedData['parent_id'])->where('children_id', $validatedData['children_id'])->update(['active' => false]);
+            Views::create($validatedData);
+        };
+
+        return back()->with('success', 'Manager Title Berasil diperbarui!');
     }
 
     public function Contact()
@@ -242,14 +279,14 @@ class ViewsController extends Controller
             'title' => 'required'
         ]);
 
-        $validatedData['parent_id'] = 7;
+        $validatedData['parent_id'] = 8;
         $validatedData['children_id'] = 1;
-        if($request->old_title !== $validatedData['title']){
+        if ($request->old_title !== $validatedData['title']) {
             Views::where('parent_id', $validatedData['parent_id'])->where('children_id', $validatedData['children_id'])->update(['active' => false]);
             Views::create($validatedData);
         };
 
-        return back()->with('success', 'Project Title Berasil diperbarui!');
+        return back()->with('success', 'Contact Title Berasil diperbarui!');
     }
 
     public function Footer()
